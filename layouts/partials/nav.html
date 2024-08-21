@@ -1,8 +1,10 @@
-      <div class="nav-container">
-        <aside class="nav">
-          <div class="panels">
-            {{ partial "nav-menu" . }}
-            {{ partial "nav-explore" . }}
-          </div>
-        </aside>
-      </div>
+{{ if not .Site.Params.hideSideNav }}
+<div class="nav-container">
+  <aside class="nav">
+    <div class="panels">
+      {{ partial "nav-menu" . }}
+      {{ partial "nav-explore" . }}
+    </div>
+  </aside>
+</div>
+{{end}}
