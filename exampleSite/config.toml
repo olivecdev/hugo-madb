@@ -24,3 +24,9 @@ paginate = 3
 [security.exec]
     allow= ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
     osEnv= ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|GEM_PATH|GEM_HOME)$']
+
+[menus]
+ [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 10
