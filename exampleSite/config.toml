@@ -21,3 +21,6 @@ paginate = 3
   [markup.highlight]
     # Disable Goldmark Chroma syntax highlighter
     codeFences = false
+[security.exec]
+    allow= ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+    osEnv= ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|GEM_PATH|GEM_HOME)$']
