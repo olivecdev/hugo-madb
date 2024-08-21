@@ -3,6 +3,7 @@ title = "Asciidoc Writing Guide"
 date = "2024-08-20"
 categories = ["Web"]
 tags = ["AsciiDoc"]
+feature = "asciidoc.png"
 +++
 :toc:
 :toc-placement: preamble
@@ -35,6 +36,8 @@ Do you know how much wood would a woodchuck chuck if woodchuck could chuck wood?
 Headings start with one or more `=` characters. Document top-level heading starts with `=`.
 This top-level heading should be the first line of your document, because it also sets the heading for entire document.
 Second-level headings start with `==`, third-level headings start with `===` and so on.
+
+image::asciidoc.png[]
 
 == Paragraphs
 

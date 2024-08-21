@@ -3,6 +3,7 @@ title = "How I wrote this blog"
 date = "2024-08-20"
 categories = ["Web"]
 tags = ["AsciiDoc"]
+feature = "blogging.jpg"
 +++
 :toc:
 :toc-placement: preamble
