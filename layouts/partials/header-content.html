@@ -2,6 +2,9 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title | markdownify }}</a>
+{{ if .Site.Params.enableThemeToggle }}
+      <button class="navbar-button" href="#" onclick="toggleTheme()"><i id="dark-mode-toggle" class="bx bx-moon bx-xs" acesskey="t"></i></a>
+{{ end }}
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>

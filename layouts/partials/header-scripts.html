@@ -1,1 +1,38 @@
-{{/* Add header scripts here */}}
+{{ if .Site.Params.enableThemeToggle }}
+
+  {{ with resources.Get "css/dark.css" | resources.Minify | resources.Fingerprint }}
+    <link disabled id="dark-mode-theme" rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+
+<script>
+const darkClass = "bx bx-moon bx-xs";
+const lightClass = "bx bx-sun bx-xs";
+
+var darkTheme = document.getElementById("dark-mode-theme");
+var toggle = document.getElementById("dark-mode-toggle");
+// the default theme is light
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+function setTheme(mode) {
+  localStorage.setItem("dark-mode-storage", mode);
+  if (mode === "dark") {
+    darkTheme.disabled = false;
+    toggle.className = lightClass;
+  } else {
+    darkTheme.disabled = true;
+    toggle.className = darkClass;
+  }
+}
+
+function toggleTheme() {
+  var toggle = document.getElementById("dark-mode-toggle");
+  if (toggle.className === darkClass) {
+    setTheme("dark");
+  } else if (toggle.className === lightClass) {
+    setTheme("light");
+  }
+}
+
+</script>
+{{ end }}
