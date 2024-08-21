@@ -1,5 +1,20 @@
 <article>
-  <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
+    {{ $images := .Resources.ByType "image" }}
+  {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+  {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+<h2>
+    <a href="{{ $.RelPermalink }}">
+  {{ with $feature }}
+      <hr style="height:10px; visibility:hidden;" />
+      <img
+      alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
+      srcset="
+            {{- (.Fill "600x200 center").RelPermalink }}
+            160w, {{- (.Fill "1200x400 center").RelPermalink }} 2x"
+            src="{{ (.Fill "600x200 center").RelPermalink }}" width="600" height="200"
+        class="post-preview-image"><br>
+  {{ end }}
+{{ .Title | markdownify }}</a></h2>
     {{ partial "post-meta.html" . }}
     <div class="paragraph">
       <p>{{ .Summary }}</p>
