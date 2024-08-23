@@ -1,2 +1,2 @@
 start:
-	hugo server --source=exampleSite --themesDir=../.. --disableFastRender
+	hugo server --source=exampleSite --themesDir=../.. --disableFastRender --logLevel info

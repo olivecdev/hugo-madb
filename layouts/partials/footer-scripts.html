@@ -7,6 +7,7 @@
 {{ $06_copy_to_clipboard := resources.Get "js/06-copy-to-clipboard.js" }}
 {{ $site := slice $01_nav $02_on_this_page $03_fragment_jumper $04_page_versions $05_mobile_navbar $06_copy_to_clipboard | resources.Concat "js/site.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}></script>
+{{ if .Site.Params.useHighlightjs }}
 {{ $highlight := resources.Get "js/vendor/highlight.min.js" | resources.Fingerprint }}
 <script src="{{ $highlight.RelPermalink }}" {{ $highlight.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}></script>
 <script>
@@ -14,6 +15,7 @@
   hljs.highlightElement(node)
 })
 </script>
+{{ end }}
 {{ if not hugo.IsServer -}}
   {{ template "_internal/google_analytics.html" . }}
 {{- end }}

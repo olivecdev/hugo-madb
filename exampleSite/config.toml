@@ -12,7 +12,11 @@ paginate = 3
   keywords = ["foo", "bar"]
   editThisPage = "https://github.com/basil/antora-default-ui-hugo-theme/edit/master/exampleSite/content/"
   since = 2020
-  adocHighlightTheme="tokyo-night-light"
+  enableThemeToggle=true
+  hideSideNav=true
+# Those parameters are needed because the templates cannot see the values of markup.asciidocext.attributes.
+  # useHighlightjs=true
+  # adocHighlightTheme="atom-one-dark"
 
 [markup.asciidocext]
 # extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
@@ -20,11 +24,40 @@ paginate = 3
   verbose = true
 [markup.asciidocext.attributes]
   icons = "font"
-  source-highlighter = "highlight.js"
+  # source-highlighter = "highlight.js"
+  source-highlighter = "rouge"
+  # rouge-linenums-mode = "inline"
+  rouge-css = "class"
+    # If set to class, run rougify style <WHICH STYLE> > assets/css/custom_highlight.css
+    # If set to style, no custom css is required, but then the rouge-style option becomes required.
+    # rouge can also work with pygments css sheets. To generate a compatible one run:
+    # pygmentize -S emacs -f html  -a '.highlight' > exampleSite/assets/css/custom_highlight.css
+  # rouge-style = "lightbulb"
+  # source-highlighter = "pygments"
+  # pygments-linenums-mode = "inline"
+  # pygments-css = "class"
+    # For pygments to work with the 'class' option run:
+    # pygmentize -S emacs -f html  -a '.highlight' -P 'classprefix=tok-' > exampleSite/assets/css/custom_highlight.css
+    # Some forums say that downloading the css from https://github.com/richleland/pygments-css/blob/master/ should work, but I noticed the rendered HTML looks for
+    # classes with names prefixed with 'tok-'. Not sure if that's hugo or asciidoctor. Versions of my tests were:
+    # hugo v0.133.0-c9777473d1369f812d727a6c07dc57ad7be7bf62+extended and Asciidoctor 2.0.20.
+    # For both rouge and pygments, the -style option is only needed if the -css option is style, because asciidoctor will inline the css into the html.
+    # If class is used, then it just uses well-defined css classes and assumes there will be a css file defining those classes in the site.
+  # pygments-style = "gruvbox-dark"
 [markup.highlight]
   # Configures Goldmark Chroma syntax highlighter
   # codeFences = false
-  style = 'nord'
+  lineNos = true
+  lineNumbersInTable = true
+  noClasses = false
+# We can use a single pygments style to please both rouge and chroma:
+# pygmentize -S lightbulb -f html -a '.highlight' > exampleSite/assets/css/custom_highlight.css
+# Lightbulb (from Pygments) is a good example of theme that works well with both rouge and chroma out of the box.
+
+# Or we can append output of rougify and hugo gen chromastyles in a single css, having different styles for syntax highlighting from markdown and asciidoc.
+# rougify style monokai.sublime > exampleSite/assets/css/custom_highlight.css
+# hugo gen chromastyles --style base16-snazzy >> exampleSite/assets/css/custom_highlight.css
+
 [security.exec]
     allow= ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
     osEnv= ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|GEM_PATH|GEM_HOME)$']

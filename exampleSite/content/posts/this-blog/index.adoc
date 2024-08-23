@@ -16,6 +16,7 @@ Asciidoc cheatsheet for GitHub
 // Need some preamble to get TOC:
 {empty}
 
+image::blogging.jpg[]
 
 == GitHub limitations
 
@@ -46,7 +47,7 @@ see limitations of GitHub Gist. Here is current list:
 
 == Attributes
 
-[source, adoc]
+[source, adoc, linenums]
 ----
 // Header of this document:
 
@@ -60,6 +61,22 @@ Asciidoc cheatsheet for GitHub
 
 // Need some preamble to get TOC:
 {empty}
+----
+
+[source, cmake, linenums]
+----
+# CMake 3.23 to allow using presets
+cmake_minimum_required(VERSION 3.23)
+
+project(
+  cppf
+  VERSION 0.0.1
+  LANGUAGES CXX
+  HOMEPAGE_URL "https://github.com/CarlosNihelton/cppf.git"
+  DESCRIPTION "A C++ tool to help creating C++ tools"
+  )
+
+add_subdirectory(src)
 ----
 
 ++++

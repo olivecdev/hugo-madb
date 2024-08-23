@@ -3,7 +3,7 @@ title = "Asciidoc Writing Guide"
 date = "2024-08-20"
 categories = ["Web"]
 tags = ["AsciiDoc"]
-feature = "asciidoc.png"
+feature = "asciidoc.jpg"
 +++
 :toc:
 :toc-placement: preamble
@@ -20,8 +20,10 @@ Essentially, AsciiDoc file is just a simple text file.
 Special characters are used for formatting.
 It is perhaps best explained by using examples:
 
+[source, adoc]
 ----
 = Example Document
+:toc:
 
 Quick brown fox jumped over lazy dog.
 The dog did not like it at all.
@@ -37,7 +39,7 @@ Headings start with one or more `=` characters. Document top-level heading start
 This top-level heading should be the first line of your document, because it also sets the heading for entire document.
 Second-level headings start with `==`, third-level headings start with `===` and so on.
 
-image::asciidoc.png[]
+image::asciidoc.jpg[]
 
 == Paragraphs
 
