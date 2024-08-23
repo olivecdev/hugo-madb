@@ -12,15 +12,19 @@ paginate = 3
   keywords = ["foo", "bar"]
   editThisPage = "https://github.com/basil/antora-default-ui-hugo-theme/edit/master/exampleSite/content/"
   since = 2020
+  adocHighlightTheme="tokyo-night-light"
 
-[markup]
-  [markup.asciidocext]
-    [markup.asciidocext.attributes]
-      "icons" = "font"
-      "source-highlighter" = "highlightjs"
-  [markup.highlight]
-    # Disable Goldmark Chroma syntax highlighter
-    codeFences = false
+[markup.asciidocext]
+# extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
+  trace = true
+  verbose = true
+[markup.asciidocext.attributes]
+  icons = "font"
+  source-highlighter = "highlight.js"
+[markup.highlight]
+  # Configures Goldmark Chroma syntax highlighter
+  # codeFences = false
+  style = 'nord'
 [security.exec]
     allow= ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
     osEnv= ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|GEM_PATH|GEM_HOME)$']
