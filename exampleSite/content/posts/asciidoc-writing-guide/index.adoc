@@ -18,6 +18,9 @@ feature = "asciidoc.jpg"
 AsciiDoc is easy.
 Essentially, AsciiDoc file is just a simple text file.
 Special characters are used for formatting.
+
+icon:envelope[link=mailto:test@example.com, title="contact"]
+
 It is perhaps best explained by using examples:
 
 [source, adoc]

@@ -14,6 +14,7 @@
 {{ $pagination_list := resources.Get "css/pagination-list.css" }}
 {{ $header := resources.Get "css/header.css" }}
 {{ $footer := resources.Get "css/footer.css" }}
+{{ $fa := resources.Get "css/vendor/fontawesome/font-awesome.min.css"}}
 {{ $highlightPath := "css/custom_highlight.css" }}
 {{ if .Site.Params.useHighlightjs }}
 {{ $highlightPath = default "github" .Site.Params.adocHighlightTheme  | printf "%s.min.css" | path.Join "css/vendor/highlightjs/" }}
@@ -22,5 +23,5 @@
 {{ $highlight := resources.Get $highlightPath | resources.Fingerprint }}
 {{ $print := resources.Get "css/print.css" }}
 {{ $custom := resources.Get "css/custom.css" }}
-{{ $site := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions $toc $doc $pagination $pagination_list $header $footer $highlight $print $custom | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
+{{ $site := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions $toc $doc $pagination $pagination_list $header $footer $fa $highlight $print $custom | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}>
