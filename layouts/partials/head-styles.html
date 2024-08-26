@@ -2,6 +2,7 @@
 {{ $vars := resources.Get "css/vars.css" }}
 {{ $base := resources.Get "css/base.css" }}
 {{ $body := resources.Get "css/body.css" }}
+{{ $preview := resources.Get "css/preview.css" }}
 {{ $nav := resources.Get "css/nav.css" }}
 {{ $main := resources.Get "css/main.css" }}
 {{ $toolbar := resources.Get "css/toolbar.css" }}
@@ -21,5 +22,5 @@
 {{ $highlight := resources.Get $highlightPath | resources.Fingerprint }}
 {{ $print := resources.Get "css/print.css" }}
 {{ $custom := resources.Get "css/custom.css" }}
-{{ $site := slice $vars $base $body $nav $main $toolbar $breadcrumbs $page_versions $toc $doc $pagination $pagination_list $header $footer $highlight $print $custom | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
+{{ $site := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions $toc $doc $pagination $pagination_list $header $footer $highlight $print $custom | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}>

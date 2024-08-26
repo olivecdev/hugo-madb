@@ -1,20 +1,26 @@
 <article>
-    {{ $images := .Resources.ByType "image" }}
-  {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
-  {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
 <h2>
+<a href="{{ $.RelPermalink }}">
+{{ .Title | markdownify }}
+</a>
+</h2>
+<div class="preview-container">
+<div>
+    {{ $images := .Resources.ByType "image" }}
+    {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+    {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
     <a href="{{ $.RelPermalink }}">
   {{ with $feature }}
-      <hr style="height:10px; visibility:hidden;" />
       <img
       alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
       srcset="
-            {{- (.Fill "600x200 center").RelPermalink }}
-            160w, {{- (.Fill "1200x400 center").RelPermalink }} 2x"
-            src="{{ (.Fill "600x200 center").RelPermalink }}" width="600" height="200"
-        class="post-preview-image"><br>
+            {{- (.Fill "200x150 center").RelPermalink }}
+            160w, {{- (.Fill "400x300 center").RelPermalink }} 2x"
+            src="{{ (.Fill "800x600 center").RelPermalink }}" width="200" height="150">
   {{ end }}
-{{ .Title | markdownify }}</a></h2>
+</a>
+</div>
+<div>
     {{ partial "post-meta.html" . }}
     <div class="paragraph">
       <p>{{ .Summary }}</p>
@@ -22,4 +28,5 @@
     <div class="paragraph">
       <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | markdownify | safeHTML }}</a></p>
     </div>
+<div>
 </article>

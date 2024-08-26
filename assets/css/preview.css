@@ -1,0 +1,8 @@
+.preview-container {
+  display: flex;
+}
+
+.preview-container img {
+  padding-top: 0.20em;
+  padding-right: 0.83em;
+}
