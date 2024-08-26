@@ -1,32 +1,35 @@
-<article>
+<article class="card">
 <h2>
 <a href="{{ $.RelPermalink }}">
 {{ .Title | markdownify }}
 </a>
 </h2>
+
 <div class="preview-container">
-<div>
-    {{ $images := .Resources.ByType "image" }}
-    {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
-    {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
-    <a href="{{ $.RelPermalink }}">
-  {{ with $feature }}
-      <img
-      alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
-      srcset="
-            {{- (.Fill "200x150 center").RelPermalink }}
-            160w, {{- (.Fill "400x300 center").RelPermalink }} 2x"
-            src="{{ (.Fill "800x600 center").RelPermalink }}" width="200" height="150">
-  {{ end }}
-</a>
+    <div>
+        {{ $images := .Resources.ByType "image" }}
+        {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+        {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+        <a href="{{ $.RelPermalink }}">
+          {{ with $feature }}
+              <img
+              alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
+              srcset="
+                    {{- (.Fill "200x150 center").RelPermalink }}
+                    160w, {{- (.Fill "400x300 center").RelPermalink }} 2x"
+                    src="{{ (.Fill "800x600 center").RelPermalink }}" width="200" height="150">
+          {{ end }}
+        </a>
+    </div>
+    <div>
+        {{ partial "post-meta.html" . }}
+        <div class="paragraph">
+          <p>{{ .Summary }}</p>
+        </div>
+    </div>
 </div>
-<div>
-    {{ partial "post-meta.html" . }}
-    <div class="paragraph">
-      <p>{{ .Summary }}</p>
-    </div>
-    <div class="paragraph">
-      <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | markdownify | safeHTML }}</a></p>
-    </div>
-<div>
+
+<div class="paragraph">
+  <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | markdownify | safeHTML }}</a></p>
+</div>
 </article>
