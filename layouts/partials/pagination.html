@@ -1,9 +1,9 @@
 {{ if or (.PrevInSection) (.NextInSection) }}
 <nav class="pagination">
-  {{ with .PrevInSection }}
+  {{ with .NextInSection }}
   <span class="prev"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></span>
   {{ end }}
-  {{ with .NextInSection }}
+  {{ with .PrevInSection }}
   <span class="next"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></span>
   {{ end }}
 </nav>
