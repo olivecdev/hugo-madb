@@ -1,5 +1,7 @@
 .toc-menu {
   color: var(--toc-font-color);
+  text-wrap: wrap;
+  max-width: 15rem;
 }
 
 .toc.sidebar .toc-menu {
@@ -33,8 +35,8 @@
 }
 
 .toc.sidebar .toc-menu ul {
-  max-height: var(--toc-height);
-  overflow-y: auto;
+  max-height: none;
+  overflow-y: visible;
   scrollbar-width: none;
 }
 
@@ -69,7 +71,7 @@
   color: inherit;
   border-left: 2px solid var(--toc-border-color);
   display: inline-block;
-  padding: 0.25rem 0 0.25rem 0.5rem;
+  padding: 0.3rem 0 0.25rem 0.5rem;
   text-decoration: none;
 }
 
@@ -93,4 +95,62 @@
 
 .toc .toc-menu .is-hidden-toc {
   display: none !important;
+}
+
+/* Mobile TOC specific styles */
+.mobile-toc {
+  display: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--toc-border-color);
+  border-radius: 0.25rem;
+  background: var(--toc-background);
+  position: relative;
+  /* Ensure it doesn't interfere with navbar */
+  z-index: 1;
+  /* Keep below navbar */
+}
+
+.mobile-toc .toc-menu {
+  position: static;
+}
+
+/* Desktop TOC positioning */
+.desktop-toc {
+  position: fixed;
+  top: var(--navbar-height);
+  right: 0;
+  z-index: 1;
+  height: calc(100vh - var(--navbar-height));
+  /* Full viewport height minus navbar */
+  overflow-y: auto;
+  /* Enable scrolling */
+}
+
+.desktop-toc .toc-menu {
+  max-height: none;
+  /* Remove height limitation */
+  position: static;
+  /* Override sticky positioning */
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1023px) {
+  .desktop-toc {
+    display: none;
+  }
+
+  .mobile-toc {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-toc {
+    display: none;
+  }
+
+  .desktop-toc {
+    display: block;
+  }
 }
