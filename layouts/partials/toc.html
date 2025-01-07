@@ -1,3 +1,13 @@
-<aside class="toc sidebar" data-title="{{ i18n "contents" }}" data-levels="3">
-  <div class="toc-menu"></div>
+<!-- Mobile TOC (top) -->
+<div class="toc mobile-toc">
+  <div class="toc-menu">
+    {{ .TableOfContents }}
+  </div>
+</div>
+
+<!-- Desktop TOC (sidebar) -->
+<aside class="toc sidebar desktop-toc" data-title="{{ i18n " contents" }}" data-levels="3">
+  <div class="toc-menu">
+    {{ .TableOfContents }}
+  </div>
 </aside>

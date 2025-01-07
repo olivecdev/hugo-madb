@@ -4,14 +4,17 @@ date = "2024-08-20"
 categories = ["Web"]
 tags = ["AsciiDoc"]
 feature = "asciidoc.jpg"
+toc = true
 +++
-:toc:
-:toc-placement: preamble
-:toclevels: 1
-:showtitle:
-:Some attr: Some value
 
-= AsciiDoc Writing Guide
+= Asciidoc Writing Guide
+:toc: preamble
+:toclevels: 3
+:sectanchors:
+:sectlinks:
+:sectnums:
+
+:showtitle:
 :page-display-order: 90
 :page-toc: top
 
