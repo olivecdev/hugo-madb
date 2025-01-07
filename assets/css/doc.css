@@ -301,6 +301,9 @@ h1.page + aside.toc.embedded {
   text-transform: uppercase;
   border-radius: 0.45rem;
   transform: translate(-0.5rem, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .doc .admonitionblock.caution .icon {
@@ -308,9 +311,19 @@ h1.page + aside.toc.embedded {
   color: var(--caution-on-color);
 }
 
+.doc .admonitionblock.caution .icon i::before {
+  font-family: 'FontAwesome';
+  content: "\f071\00a0";
+}
+
 .doc .admonitionblock.important .icon {
   background-color: var(--important-color);
   color: var(--important-on-color);
+}
+
+.doc .admonitionblock.important .icon i::before {
+  font-family: 'FontAwesome';
+  content: "\f06a\00a0";
 }
 
 .doc .admonitionblock.note .icon {
@@ -318,14 +331,29 @@ h1.page + aside.toc.embedded {
   color: var(--note-on-color);
 }
 
+.doc .admonitionblock.note .icon i::before {
+  font-family: 'FontAwesome';
+  content: "\f05a\00a0";
+}
+
 .doc .admonitionblock.tip .icon {
   background-color: var(--tip-color);
   color: var(--tip-on-color);
 }
 
+.doc .admonitionblock.tip .icon i::before {
+  font-family: 'FontAwesome';
+  content: "\f0eb\00a0";
+}
+
 .doc .admonitionblock.warning .icon {
   background-color: var(--warning-color);
   color: var(--warning-on-color);
+}
+
+.doc .admonitionblock.warning .icon i::before {
+  font-family: 'FontAwesome';
+  content: "\f06a\00a0";
 }
 
 .doc .admonitionblock .icon i {
