@@ -1,12 +1,15 @@
 {{ define "main" }}
-  <article class="doc">
+<article class="doc">
+  <h1 class="page">{{ .Site.Title | safeHTML }}</h1>
+  <div class="blog-description">
     {{ .Content }}
-    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-    {{ range $paginator.Pages }}
-      {{ partial "post-preview.html" . }}
-    {{ end }}
-    <div class="pagination-centered">
-      {{ template "_internal/pagination.html" . }}
-    </div>
-  </article>
+  </div>
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+  {{ range $paginator.Pages }}
+  {{ partial "post-preview.html" . }}
+  {{ end }}
+  <div class="pagination-centered">
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</article>
 {{ end }}
