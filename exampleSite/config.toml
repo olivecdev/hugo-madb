@@ -10,6 +10,7 @@ paginate = 3
 [params]
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   keywords = ["foo", "bar"]
+  logo = "/blog.svg"
   editThisPage = "https://github.com/basil/antora-default-ui-hugo-theme/edit/master/exampleSite/content/"
   since = 2020
   enableThemeToggle=true

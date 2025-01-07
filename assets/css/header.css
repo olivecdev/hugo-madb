@@ -18,7 +18,7 @@ body {
 }
 
 /* My addition for toggling dark/light mode */
-.navbar-button{
+.navbar-button {
   background: var(--navbar-background);
   color: var(--navbar-font-color);
   border: 0;
@@ -39,12 +39,13 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar-end > .navbar-item,
+
+  .navbar-end>.navbar-item,
   .navbar-end .navbar-link {
     color: var(--navbar-font-color);
   }
 
-  .navbar-end > a.navbar-item:hover,
+  .navbar-end>a.navbar-item:hover,
   .navbar-end .navbar-link:hover {
     background: var(--navbar_hover-background);
     color: var(--navbar-font-color);
@@ -91,11 +92,11 @@ body {
   transition: transform ease-out 0.25s, opacity 0s 0.25s, margin-top ease-out 0.25s 0.25s;
 }
 
-.navbar-burger span + span {
+.navbar-burger span+span {
   margin-top: 0.25rem;
 }
 
-.navbar-burger.is-active span + span {
+.navbar-burger.is-active span+span {
   margin-top: -1.5px;
 }
 
@@ -179,6 +180,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+
   .navbar,
   .navbar-menu,
   .navbar-end {
@@ -272,4 +274,9 @@ body {
   color: var(--navbar-button-font-color);
   padding: 0 0.75em;
   white-space: nowrap;
+}
+
+.navbar-logo {
+  height: 1.75rem;
+  margin-right: 0.5rem;
 }
