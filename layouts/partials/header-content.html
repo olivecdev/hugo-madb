@@ -1,31 +1,32 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title | markdownify }}</a>
-{{ if .Site.Params.enableThemeToggle }}
-      <button class="navbar-button" href="#" onclick="toggleTheme()"><i id="dark-mode-toggle" class="bx bx-moon bx-xs" acesskey="t"></i></a>
-{{ end }}
-      <button class="navbar-burger" data-target="topbar-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title | safeHTML }}</a>
+      {{ if .Site.Params.enableThemeToggle }}
+      <button class="navbar-button" href="#" onclick="toggleTheme()"><i id="dark-mode-toggle" class="bx bx-moon bx-xs"
+          acesskey="t"></i></a>
+        {{ end }}
+        <button class="navbar-burger" data-target="topbar-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         {{ range .Site.Menus.main }}
-          {{ if .HasChildren }}
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="#" title="{{ .Title | markdownify }}">{{ .Name }}</a>
-              <div class="navbar-dropdown">
-                {{ range .Children }}
-                    <a class="navbar-item" href="{{ .URL | absLangURL }}" title="{{ .Title | markdownify }}">{{ .Name }}</a>
-                {{ end }}
-              </div>
-            </div>
-          {{ else }}
-            <a class="navbar-item" href="{{ .URL | absLangURL }}" title="{{ .Title | markdownify }}">{{ .Name }}</a>
-          {{ end }}
+        {{ if .HasChildren }}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#" title="{{ .Title | safeHTML }}">{{ .Name }}</a>
+          <div class="navbar-dropdown">
+            {{ range .Children }}
+            <a class="navbar-item" href="{{ .URL | absLangURL }}" title="{{ .Title | safeHTML }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ else }}
+        <a class="navbar-item" href="{{ .URL | absLangURL }}" title="{{ .Title | safeHTML }}">{{ .Name }}</a>
+        {{ end }}
         {{ end }}
       </div>
     </div>

@@ -15,7 +15,8 @@ Creating those build types can be done by creating new profiles or (if only the 
 the settings to Conan command line:
 
 ```sh
-conan install . --build=missing --output-folder=build/<Debug/Release/Other> --settings=build_type=<Debug/Release/Other>
+conan install . --build=missing --output-folder=build/<Debug/Release/Other>
+  --settings=build_type=<Debug/Release/Other>
 ```
 
 Conan creates CMakePresets.json inside the respective build trees and import all of them in the root directory
