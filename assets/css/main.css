@@ -1,21 +1,29 @@
-@media screen and (max-width: 1023.5px) {
+@media screen and (max-width: 1023px) {
   aside.toc.sidebar {
     display: none;
   }
 
-  main > .content {
+  main>.content {
     overflow-x: auto;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   main {
     flex: auto;
-    min-width: 0; /* min-width: 0 required for flexbox to constrain overflowing elements */
+    min-width: 0;
+    /* min-width: 0 required for flexbox to constrain overflowing elements */
   }
 
-  main > .content {
+  main>.content {
+    max-width: 1200px;
     display: flex;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
   }
 
   aside.toc.embedded {
