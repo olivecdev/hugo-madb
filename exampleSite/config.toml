@@ -25,6 +25,8 @@ paginate = 3
 [markup.asciidocext.attributes]
   icons = "font"
   # source-highlighter = "highlight.js"
+  #highlightjs-theme = "gruvbox"
+  #highlightjs-css = "class"
   source-highlighter = "rouge"
   # rouge-linenums-mode = "inline"
   rouge-css = "class"
@@ -43,13 +45,13 @@ paginate = 3
     # hugo v0.133.0-c9777473d1369f812d727a6c07dc57ad7be7bf62+extended and Asciidoctor 2.0.20.
     # For both rouge and pygments, the -style option is only needed if the -css option is style, because asciidoctor will inline the css into the html.
     # If class is used, then it just uses well-defined css classes and assumes there will be a css file defining those classes in the site.
-  # pygments-style = "gruvbox-dark"
+  # pygments-style = "gruvbox"
 [markup.highlight]
   # Configures Goldmark Chroma syntax highlighter
-  # codeFences = false
   lineNos = true
   lineNumbersInTable = true
-  noClasses = false
+  noClasses = true
+  style = "gruvbox"
 # We can use a single pygments style to please both rouge and chroma:
 # pygmentize -S lightbulb -f html -a '.highlight' > exampleSite/assets/css/custom_highlight.css
 # Lightbulb (from Pygments) is a good example of theme that works well with both rouge and chroma out of the box.
