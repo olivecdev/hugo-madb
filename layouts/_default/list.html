@@ -1,9 +1,12 @@
 {{ define "main" }}
 <article class="doc">
+  {{ if .Params.showTitle}}
   <h1 class="page">{{ .Title | safeHTML }}</h1>
+  {{end}}
   <div class="blog-description">
     {{ .Content | safeHTML }}
   </div>
+  <br />
   {{ range .Paginator.Pages }}
   {{ partial "post-preview.html" . }}
   {{ end }}
