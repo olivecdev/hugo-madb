@@ -1,6 +1,6 @@
 baseURL = "https://example.com/"
 languageCode = "en"
-
+summaryLength = 30
 title = "Example Site"
 theme = "antora-default-ui-hugo-theme"
 
@@ -18,6 +18,15 @@ paginate = 3
 # Those parameters are needed because the templates cannot see the values of markup.asciidocext.attributes.
   # useHighlightjs=true
   # adocHighlightTheme="atom-one-dark"
+[params.socialIcons.github]
+    url = "https://github.com/acme"
+    icon = "bx bxl-github"
+[params.socialIcons.zap]
+    url = "https://github.com/acme"
+    icon = "bx bxl-whatsapp"
+[params.socialIcons.email]
+    url = "mailto:blue@sky.org"
+    icon = "bx bxl-gmail"
 
 [markup.asciidocext]
 # extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]

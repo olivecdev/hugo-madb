@@ -1,7 +1,16 @@
 <footer class="footer">
   {{ if or (.Site.Copyright) (.Site.Author.name) }}
-    {{ $current := now.Format "2006" }}
-    <p>&copy; {{ if and (.Site.Params.since) (ne .Site.Params.since $current) }}{{ .Site.Params.since }}&ndash;{{ end }}{{ $current }} {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}.{{ end }}</p>
+  {{ $current := now.Format "2006" }}
+  <p>&copy; {{ if and (.Site.Params.since) (ne .Site.Params.since $current) }}{{ .Site.Params.since }}&ndash;{{ end }}{{
+    $current }} {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}.{{
+    end }}</p>
   {{ end }}
+  <div class="social-links">
+    {{ range .Site.Params.socialIcons }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
+      <i class="{{ .icon }}"></i>
+    </a>
+    {{ end }}
+  </div>
   <p>{{ .Site.Hugo.Version | i18n "poweredBy" | safeHTML }}</p>
 </footer>
