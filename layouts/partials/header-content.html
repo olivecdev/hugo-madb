@@ -1,7 +1,12 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title | safeHTML }}</a>
+      <a class="navbar-item" href="{{ .Site.Home.RelPermalink }}">
+        {{ if .Site.Params.logo }}
+        <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }} logo" class="navbar-logo">
+        {{ end }}
+        {{ .Site.Title | safeHTML }}
+      </a>
       {{ if .Site.Params.enableThemeToggle }}
       <button class="navbar-button" href="#" onclick="toggleTheme()"><i id="dark-mode-toggle" class="bx bx-moon bx-xs"
           acesskey="t"></i></a>
