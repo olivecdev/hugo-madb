@@ -10,4 +10,4 @@ Welcome to the AsciiDoc website!
 --------------------------------
 This is a very cool place to be in.
 
-image::asciidoc-writing-guide/asciidoc.jpg[AsciiDoc Logo]
+image::/posts/asciidoc-writing-guide/asciidoc.jpg[AsciiDoc Logo]

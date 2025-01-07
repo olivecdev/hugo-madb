@@ -1,0 +1,3 @@
+The best blog ever.
+
+image::/posts/this-blog/blogging.jpg[]
