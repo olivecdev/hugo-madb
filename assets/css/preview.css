@@ -6,3 +6,20 @@
   padding-top: 0.20em;
   padding-right: 0.83em;
 }
+
+.card {
+  padding: 16px;
+  margin: 8px;
+  background-color: var(--body-background);
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
