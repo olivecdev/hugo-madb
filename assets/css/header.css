@@ -63,7 +63,9 @@ body {
 
 .navbar-brand {
   display: flex;
+  align-items: center;
   height: 100%;
+  gap: 1rem;
 }
 
 .navbar-burger {
@@ -177,6 +179,10 @@ body {
   .navbar-menu .navbar-link:hover {
     background: var(--navbar-menu_hover-background);
   }
+
+  .navbar-menu.is-active .search-button {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -279,4 +285,30 @@ body {
 .navbar-logo {
   height: 1.75rem;
   margin-right: 0.5rem;
+}
+
+.navbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  color: var(--navbar-font-color);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.search-button:hover {
+  background: var(--navbar_hover-background);
+}
+
+.search-button i {
+  font-size: 1.25rem;
 }

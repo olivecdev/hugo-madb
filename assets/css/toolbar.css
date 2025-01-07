@@ -66,3 +66,45 @@
 .toolbar .edit-this-page a {
   color: var(--toolbar-muted-color);
 }
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5rem;
+}
+
+.toolbar-item {
+  display: none;
+  padding-right: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .toolbar-item {
+    display: block;
+  }
+}
+
+.toolbar-item a {
+  color: var(--toolbar-muted-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.toolbar-item a i {
+  font-size: 1rem;
+}
+
+.toolbar-item a:hover {
+  color: var(--toolbar-font-color);
+}
+
+/* Remove the old search button styles */
+.toolbar-search-button,
+.search-button {
+  display: none;
+}
