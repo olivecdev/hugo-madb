@@ -14,12 +14,18 @@
   border-radius: 2px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--body-background);
   display: flex;
   flex-direction: column;
+  word-wrap: break-word;
+}
+
+.card h2, .card .paragraph {
+  word-wrap: break-word;
+  /* flex-wrap: wrap; */
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

@@ -135,7 +135,7 @@
 }
 
 /* Responsive layout */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1359px) {
   .desktop-toc {
     display: none;
   }
@@ -145,7 +145,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1360px) {
   .mobile-toc {
     display: none;
   }

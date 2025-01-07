@@ -4,6 +4,7 @@ date = "2024-08-20"
 categories = ["Web"]
 tags = ["AsciiDoc"]
 feature = "blogging.jpg"
+summary = "This is a cool post about how I wrote this blog"
 +++
 :toc:
 :toc-placement: preamble
@@ -15,8 +16,6 @@ Asciidoc cheatsheet for GitHub
 ==============================
 // Need some preamble to get TOC:
 {empty}
-
-image::blogging.jpg[]
 
 == GitHub limitations
 

@@ -6,19 +6,23 @@
   </h2>
 
   <div class="preview-container">
-    <div>
+    <div style="max-width:25%">
       {{ $images := .Resources.ByType "image" }}
       {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
       {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
       <a href="{{ $.RelPermalink }}">
         {{ with $feature }}
+        {{ if eq .MediaType.SubType "svg" }}
+        <img alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}" src="{{ .RelPermalink }}" width="200" height="150">
+        {{ else }}
         <img alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}" srcset="
                     {{- (.Fill " 200x150 center").RelPermalink }} 160w, {{- (.Fill "400x300 center" ).RelPermalink }}
           2x" src="{{ (.Fill " 800x600 center").RelPermalink }}" width="200" height="150">
         {{ end }}
+        {{ end }}
       </a>
     </div>
-    <div>
+    <div style="max-width:75%">
       {{ partial "post-meta.html" . }}
       <div class="paragraph">
         {{ .Summary | safeHTML }}

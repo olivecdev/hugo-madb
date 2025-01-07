@@ -18,15 +18,18 @@
             {{- end }}
         {{- end }}
     {{ end }}
-    {{ $taxonomy := "tags" }}
-    {{ with .Param $taxonomy }}
-        &middot; {{ i18n "taggedWith" }}
-        {{ range $index, $page := . }}
-            {{- if gt $index 0 }}, {{ end -}}
-            {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $page) -}}
-                <a href="{{ .RelPermalink }}">{{ $page }}</a>
+    {{ $current := . }}
+    {{ range $taxonomy := slice "tags" "topics" }}
+        {{ with $current.Param $taxonomy }}
+            &middot; {{ i18n "about" }}
+            {{ range $index, $page := . }}
+                {{- if gt $index 0 }}, {{ end -}}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $page) -}}
+                    <a href="{{ .RelPermalink }}">{{ $page }}</a>
+                {{- end }}
             {{- end }}
-        {{- end }}
+        {{ end }}
     {{ end }}
+    &middot; {{ i18n "readingTime" .ReadingTime }}
   </div>
 </div>

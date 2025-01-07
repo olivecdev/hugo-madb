@@ -1,11 +1,12 @@
 baseURL = "https://example.com/"
 languageCode = "en"
-summaryLength = 30
+summaryLength = 20
 title = "Example Site"
-theme = "antora-default-ui-hugo-theme"
+theme = "hugo-madb"
 
 copyright = "Acme Corp. All rights reserved."
-paginate = 3
+[pagination]
+pagerSize = 3
 
 [params]
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -27,6 +28,9 @@ paginate = 3
 [params.socialIcons.email]
     url = "mailto:blue@sky.org"
     icon = "bx bxl-gmail"
+[params.giscuss]
+  repo = "olivecdev/hugo-madb"
+  category="Comments"
 
 [markup.asciidocext]
 # extensions = ["asciidoctor-html5s", "asciidoctor-diagram"]
@@ -79,3 +83,7 @@ paginate = 3
     name = 'Posts'
     pageRef = '/posts'
     weight = 10
+
+[taxonomies]
+topic = 'topics'
+category = 'categories'

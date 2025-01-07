@@ -1,4 +1,4 @@
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1359px) {
   aside.toc.sidebar {
     display: none;
   }
@@ -11,7 +11,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1360px) {
   main {
     flex: auto;
     min-width: 0;
@@ -19,7 +19,7 @@
   }
 
   main>.content {
-    max-width: 1200px;
+    max-width: 1024px;
     display: flex;
     margin: 0 auto;
     padding: 0 1rem;
@@ -40,4 +40,20 @@
   aside.toc.sidebar {
     flex-basis: var(--toc-width--widescreen);
   }
+}
+
+.social-share {
+  padding: 0.5rem;
+  display: flex;
+  margin: 1rem 0;
+  justify-content: center;
+  color: var(--body-font-color);
+  background-color: var(--nav-border-color);
+}
+
+.social-share a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  width: 36px;
+  height: 36px;
 }

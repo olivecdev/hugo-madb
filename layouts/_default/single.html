@@ -7,5 +7,9 @@
   {{ end }}
   {{ .Content }}
   {{ partial "pagination" . }}
+  {{ partial "social-share" . }}
+  {{ with .Site.Params.giscuss }}
+  {{ partial "giscuss" . }}
+  {{ end }}
 </article>
 {{ end }}

@@ -1,0 +1,28 @@
+<div class="social-share">
+  <p>{{ i18n "sharePost" }}:</p>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" aria-label="Share on Facebook">
+    <i class='bx bx-md bxl-facebook'></i>
+  </a>
+  <a href="https://x.com/share?url={{ .Permalink }}" target="_blank" aria-label="Share on X">
+    <i class='bx bx-md bxl-twitter'></i>
+  </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank" aria-label="Share on LinkedIn">
+    <i class='bx bx-md bxl-linkedin'></i>
+  </a>
+  <a href="https://api.whatsapp.com/send?text={{ .Permalink }}" target="_blank" aria-label="Share on WhatsApp">
+    <i class='bx bx-md bxl-whatsapp'></i>
+  </a>
+  <a href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}" target="_blank" aria-label="Share on Telegram">
+    <i class='bx bx-md bxl-telegram'></i>
+  </a>
+  <a href="https://www.reddit.com/submit?url={{ .Permalink }}" target="_blank" aria-label="Share on Reddit">
+    <i class='bx bx-md bxl-reddit'></i>
+  </a>
+  <a href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}" target="_blank" aria-label="Share on Hacker News">
+    <i class='bx bx-md bxl-yahoo'></i>
+  </a>
+  <a href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank" aria-label="Share via Email">
+    <i class='bx bx-md bxs-envelope'></i>
+  </a>
+</div>
+

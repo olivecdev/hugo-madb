@@ -1,0 +1,157 @@
+############################# Plugins ##############################
+
+# font-awesome as a css plugin
+[[params.plugins.css]]
+link = "plugins/fontawesome/font-awesome.min.css"
+
+#highlightjs as both css and js plugins
+[[params.plugins.js]]
+link = "plugins/highlightjs/highlight.min.js"
+
+[[params.plugins.css]]
+link = "plugins/highlightjs/1c-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/a11y-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/a11y-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/agate.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/androidstudio.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/an-old-hope.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/arduino-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/arta.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/ascetic.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/atom-one-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/atom-one-dark-reasonable.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/atom-one-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/brown-paper.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/codepen-embed.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/color-brewer.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/default.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/devibeans.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/docco.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/far.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/felipec.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/foundation.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/github-dark-dimmed.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/github-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/github.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/gml.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/googlecode.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/gradient-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/gradient-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/grayscale.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/hybrid.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/idea.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/intellij-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/ir-black.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/isbl-editor-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/isbl-editor-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/kimbie-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/kimbie-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/lightfair.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/lioshi.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/magula.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/mono-blue.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/monokai.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/monokai-sublime.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/night-owl.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/nnfx-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/nnfx-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/nord.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/obsidian.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/panda-syntax-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/panda-syntax-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/paraiso-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/paraiso-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/pojoaque.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/purebasic.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/qtcreator-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/qtcreator-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/rainbow.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/routeros.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/school-book.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/shades-of-purple.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/srcery.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/stackoverflow-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/stackoverflow-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/sunburst.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/tokyo-night-dark.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/tokyo-night-light.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/tomorrow-night-blue.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/tomorrow-night-bright.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/vs2015.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/vs.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/xcode.min.css"
+[[params.plugins.css]]
+link = "plugins/highlightjs/xt256.min.css"
+
