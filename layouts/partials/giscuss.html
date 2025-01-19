@@ -1,3 +1,4 @@
+{{ if not hugo.IsDevelopment }}
 <div id="giscus-comments">
   <script src="https://giscus.app/client.js"
     data-repo="{{ .repo }}"
@@ -16,4 +17,4 @@
     async>
   </script>
 </div>
-
+{{ end }}
