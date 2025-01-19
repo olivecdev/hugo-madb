@@ -25,6 +25,8 @@
 .doc h5,
 .doc h6 {
   color: var(--heading-font-color);
+  font-family: Ubuntu;
+  font-variation-settings: 'VOLM' 20;
   font-weight: var(--heading-font-weight);
   hyphens: none;
   line-height: 1.3;
@@ -130,7 +132,7 @@ h1.page + aside.toc.embedded {
 }
 
 .doc p code,
-.doc thead code {
+.doc table  code {
   color: var(--code-font-color);
   background: var(--code-background);
   border-radius: 0.25em;
@@ -843,3 +845,14 @@ h1.page + aside.toc.embedded {
   hyphens: none;
   word-wrap: normal;
 }
+
+.doc strong {
+  font-weight: 600;
+}
+
+.doc em {
+  font-weight: 300;
+  font-width: 87.5;
+  font-style: italic;
+}
+
