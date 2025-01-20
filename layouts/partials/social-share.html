@@ -1,5 +1,6 @@
 <div class="social-share">
   <p>{{ i18n "sharePost" }}:</p>
+  <div>
   <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" aria-label="Share on Facebook">
     <i class='bx bx-md bxl-facebook'></i>
   </a>
@@ -24,5 +25,6 @@
   <a href="mailto:?subject={{ .Title }}&body={{ .Permalink }}" target="_blank" aria-label="Share via Email">
     <i class='bx bx-md bxs-envelope'></i>
   </a>
+</div>
 </div>
 

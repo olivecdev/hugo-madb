@@ -45,7 +45,7 @@
 .social-share {
   padding: 0.5rem;
   display: flex;
-  margin: 1rem 0;
+  margin: 4rem 0;
   justify-content: center;
   color: var(--body-font-color);
   background-color: var(--nav-border-color);
