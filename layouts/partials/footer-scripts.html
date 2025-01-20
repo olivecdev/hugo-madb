@@ -7,11 +7,12 @@
 {{ $04_page_versions := resources.Get "js/04-page-versions.js" }}
 {{ $05_mobile_navbar := resources.Get "js/05-mobile-navbar.js" }}
 {{ $06_copy_to_clipboard := resources.Get "js/06-copy-to-clipboard.js" }}
-{{ $site := slice $01_nav $02_on_this_page $03_fragment_jumper $04_page_versions $05_mobile_navbar $06_copy_to_clipboard
+{{ $07_search := resources.Get "js/07-search.js" | js.Build (dict "params" (dict "baseurl" site.BaseURL)) }}
+{{ $site := slice $01_nav $02_on_this_page $03_fragment_jumper $04_page_versions $05_mobile_navbar $06_copy_to_clipboard $07_search
 | resources.Concat "js/site.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}></script>
 {{ if .Site.Params.useHighlightjs }}
-{{ $highlight := resources.Get "plugins/highlightjs/highlight.min.js" | resources.Fingerprint }}
+{{ $highlight := resources.Get "plugins/highlightjs/highlight.min.js" | resources.Fingerprint }}<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 <script src="{{ $highlight.RelPermalink }}" {{ $highlight.Data.Integrity | printf "integrity=%q" | safeHTMLAttr
     }}></script>
 <script>
