@@ -1,5 +1,4 @@
-{{ if not .Site.Params.hideSideNav }}
-<div class="nav-container">
+<div class="nav-container" {{ if .Site.Params.hideSideNav }} hidden {{end}} >
   <aside class="nav">
     <div class="panels">
       {{ partial "nav-menu" . }}
@@ -7,4 +6,3 @@
     </div>
   </aside>
 </div>
-{{end}}
