@@ -9,6 +9,5 @@
 {{ else if not .p1.IsHome }}
 {{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 "siteTitle" .siteTitle) }}
 {{ end }}
-<li>{{ if ne .p1 .p2 }}<a href="{{ .p1.RelPermalink }}">{{ end }}{{ if .p1.IsHome }}{{ .siteTitle | safeHTML }}{{ else
-    }}{{ .p1.Title | safeHTML }}{{ end }}{{ if ne .p1 .p2 }}</a>{{ end }}</li>
+<li>{{ if ne .p1 .p2 }}<a href="{{ .p1.RelPermalink }}">{{ end }}{{ if not .p1.IsHome }}{{ .p1.Title | safeHTML }}{{ end }}{{ if ne .p1 .p2 }}</a>{{ end }}</li>
 {{ end }}
