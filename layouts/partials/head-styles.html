@@ -2,7 +2,6 @@
 {{ $vars := resources.Get "css/vars.css" }}
 {{ $base := resources.Get "css/base.css" }}
 {{ $body := resources.Get "css/body.css" }}
-{{ $blogList := resources.Get "css/blog-list.css" }}
 {{ $preview := resources.Get "css/preview.css" }}
 {{ $nav := resources.Get "css/nav.css" }}
 {{ $main := resources.Get "css/main.css" }}
@@ -24,7 +23,7 @@
 {{ $highlight := resources.Get $highlightPath }}
 {{ $print := resources.Get "css/print.css" }}
 {{ $custom := resources.Get "css/custom.css" }}
-{{ $r := slice $vars $base $body $blogList $preview $nav $main $toolbar $breadcrumbs $page_versions
+{{ $r := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions
 $toc $doc $pagination $pagination_list $header $footer $fa  $print $custom }}
 {{ with $highlight }}
 {{ $r = $r | append $highlight }}

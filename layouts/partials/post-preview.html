@@ -6,7 +6,7 @@
   </h2>
 
   <div class="preview-container">
-    <div style="max-width:25%">
+    <div class="card-feature">
       {{ $images := .Resources.ByType "image" }}
       {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
       {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
@@ -22,15 +22,14 @@
         {{ end }}
       </a>
     </div>
-    <div style="max-width:75%">
+    <div class="card-content">
       {{ partial "post-meta.html" . }}
       <div class="paragraph">
         {{ .Summary | safeHTML }}
       </div>
     </div>
-  </div>
-
-  <div class="paragraph">
-    <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | safeHTML }}</a></p>
-  </div>
+</div>
+<div class="paragraph align-right">
+  <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | safeHTML }}</a></p>
+</div>
 </article>
