@@ -6,6 +6,7 @@
   {{ partial "toc.html" . }}
   {{ end }}
   {{ .Content }}
+  {{ partial "post-signature" . }}
   {{ partial "pagination" . }}
   {{ partial "social-share" . }}
   {{ with .Site.Params.giscuss }}

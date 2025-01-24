@@ -1,0 +1,34 @@
+{{ $page := . }}
+{{ $signature := print .Permalink "index.html.asc"}}
+{{ with .Site.Params.openPGP }}
+<div id="signature-wrapper">
+  <div class="signature">
+    <iframe id="signature-frame" frameBorder="0" type="text/plain" src="{{ $signature }}"></iframe>
+  </div>
+    {{ $info := i18n "signatureInfo" }}
+    <!-- This snippet produces a markdown syntax, but asciidoc also works with that without warnings. -->
+    {{ $command0 := print "> ```\n> gpg --keyserver " .keyserver " --recv-keys " .keyid "\n" }}
+    {{ $command1 := print "> POST_URL=\"" $page.Permalink "\"\n" }}
+    {{ $command2 := print "> gpg --verify <(curl -sS \"${POST_URL}index.html.asc\") <(curl -sS \"${POST_URL}\")\n> ```"  }}
+    {{ $more := i18n "signatureDetails" }}
+  <div class="signature-info">{{ print "> " $info "\n" $command0 $command1 $command2 "\n> " $more "." |
+    $page.RenderString }}</div>
+</div>
+  <script type="text/javascript">
+  const iframe = document.getElementById('signature-frame');
+  const wrapper = document.getElementById('signature-wrapper');
+
+  iframe.onload = () => {
+    if (iframe.contentDocument) {
+      const ifTitle = iframe.contentDocument.title;
+      if (ifTitle.includes("404")) {
+        // Handle 404 case
+        wrapper.style.display = 'none';
+      }
+    } else {
+      // Handle case where iframe didn't load
+      wrapper.style.display = 'none';
+    }
+  };
+  </script>
+{{ end }}
