@@ -63,7 +63,13 @@ Optionally, configure a URL for use with the **Edit this page** feature:
 
 ### Customization
 
-Custom CSS can be added to `assets/css/custom.css`.
+One or more custom CSS files can be added to the site output by informing their paths relative to the
+`assets/` directory via the site configuration, for example:
+
+```toml
+[params]
+custom_css = ["carrousel.css", "profile.css"]
+```
 
 ### Syntax Highlighting
 

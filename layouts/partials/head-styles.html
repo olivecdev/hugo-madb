@@ -22,9 +22,12 @@
 {{ fmt.Warnf "Loading styles for syntax highlighting from asset %s" $highlightPath }}
 {{ $highlight := resources.Get $highlightPath }}
 {{ $print := resources.Get "css/print.css" }}
-{{ $custom := resources.Get "css/custom.css" }}
 {{ $r := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions
-$toc $doc $pagination $pagination_list $header $footer $fa  $print $custom }}
+$toc $doc $pagination $pagination_list $header $footer $fa  $print }}
+{{ range .Site.Params.custom_css }}
+  {{ $custom := resources.Get . }}
+  {{ $r = $r | append $custom }}
+{{ end }}
 {{ with $highlight }}
 {{ $r = $r | append $highlight }}
 {{ end }}
