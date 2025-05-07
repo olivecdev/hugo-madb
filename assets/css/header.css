@@ -295,3 +295,29 @@ body {
   align-items: center;
   gap: 1rem;
 }
+
+/* Top nav RSS icon styling */
+.nav-rss-feed {
+  display: flex;
+  align-items: center;
+  /* Add this line for better spacing */
+}
+
+.nav-rss-feed a {
+  color: var(--navbar-font-color);
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.nav-rss-feed a:hover {
+  color: #FF6600;
+  /* RSS orange on hover */
+}
+
+.nav-rss-feed .feather-rss {
+  width: 18px;
+  height: 18px;
+}
+
+/* If you want to support dark/light themes, ensure your CSS variables are set accordingly in your theme root */
