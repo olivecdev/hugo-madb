@@ -12,6 +12,9 @@
           acesskey="t"></i></a>
         {{ end }}
         <button class="navbar-burger" data-target="topbar-nav">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
@@ -19,7 +22,7 @@
         {{ if .Site.Params.enableSearch }}
         <div class="navbar-item search-bar">
           <form action="{{ .Site.BaseURL }}search" method="GET">
-            <input type="search" name="q" id="search-query" >
+            <input type="search" name="q" id="search-query">
             <button type="submit" hidden>Search</button>
           </form>
         </div>
