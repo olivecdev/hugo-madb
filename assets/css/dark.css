@@ -1,20 +1,194 @@
-/* changes the background color, inverts colors, adjusts brightness, colours, hue: */
-html {
-    background-color: #171717 !important;
-}
-html {
-    filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
-    -webkit-filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
-}
-body {
-    background-color: #FFF !important;
-}
-img,
-video,
-.navbar, .navbar * head, /* I have no idea why I need to set this to an impossible element but otherwise the button would flicker*/
-.highlight,
-body * [style*="background-image"] {
-    filter: hue-rotate(180deg) contrast(105%) invert(100%);
-    -webkit-filter: hue-rotate(180deg) contrast(105%) invert(100%);
+html[data-theme="dark"] {
+    /* Base colors for dark theme */
+    --color-white: #171717;
+    --color-smoke-10: #252525;
+    --color-smoke-30: #2c2c2c;
+    --color-smoke-50: #333333;
+    --color-smoke-70: #3d3d3d;
+    --color-smoke-90: #454545;
+    --color-gray-10: #6a6a6a;
+    --color-gray-30: #8d8d8d;
+    --color-gray-50: #ababab;
+    --color-gray-70: #c4c4c4;
+    --color-jet-20: #d4d4d4;
+    --color-jet-30: #dedede;
+    --color-jet-50: #e8e8e8;
+    --color-jet-70: #f5f5f5;
+    --color-jet-80: #fafafa;
+    --color-black: #ffffff;
+
+    /* Body */
+    --body-background: var(--color-white);
+    --body-font-color: var(--color-jet-20);
+    --scrollbar-thumb-color: var(--color-gray-30);
+
+    /* Headings */
+    --heading-font-color: var(--color-jet-50);
+
+    /* Links */
+    --link-font-color: #5c9ae6;
+    --link_hover-font-color: #7db1f0;
+
+    /* Panel and component backgrounds */
+    --panel-background: var(--color-smoke-30);
+    --panel-border-color: var(--color-smoke-90);
+
+    /* Navbar - preserved as-is */
+    --navbar-background: #000000;
+    /* Keep black navbar */
+    --navbar-font-color: #ffffff;
+    --navbar_hover-background: #222222;
+    --navbar-button-background: var(--color-white);
+    --navbar-button-border-color: var(--panel-border-color);
+    --navbar-button-font-color: var(--body-font-color);
+    --navbar-menu-border-color: var(--panel-border-color);
+    --navbar-menu-background: var(--color-smoke-30);
+    --navbar-menu-font-color: var(--body-font-color);
+    --navbar-menu_hover-background: var(--color-smoke-50);
+
+    /* Nav */
+    --nav-background: var(--panel-background);
+    --nav-border-color: var(--color-gray-30);
+    --nav-heading-font-color: var(--color-jet-50);
+    --nav-muted-color: var(--color-gray-50);
+    --nav-panel-divider-color: var(--color-smoke-70);
+    --nav-secondary-background: var(--color-smoke-50);
+
+    /* Toolbar */
+    --toolbar-background: var(--panel-background);
+    --toolbar-border-color: var(--panel-border-color);
+    --toolbar-font-color: var(--color-gray-70);
+    --toolbar-muted-color: var(--color-gray-30);
+    --page-version-menu-background: var(--color-smoke-50);
+    --page-version-missing-font-color: var(--color-gray-30);
+
+    /* Code and pre blocks */
+    --code-background: var(--color-smoke-70);
+    --code-font-color: #e6e6e6;
+    --pre-background: var(--color-smoke-50);
+    --pre-border-color: var(--color-gray-10);
+    --pre-annotation-font-color: var(--color-gray-50);
+
+    /* Admonitions - preserve colors but adjust for dark theme */
+    --caution-color: #c67bc3;
+    --important-color: #e95c5c;
+    --note-color: #4a9fee;
+    --tip-color: #5dc468;
+    --warning-color: #f3a149;
+
+    /* Tables */
+    --table-border-color: var(--color-smoke-90);
+    --table-stripe-background: var(--color-smoke-30);
+    --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
+
+    /* TOC */
+    --toc-border-color: var(--panel-border-color);
+
+    /* Footer */
+    --footer-background: var(--color-smoke-90);
+    --footer-font-color: var(--color-gray-70);
+    --footer-link-font-color: var(--color-jet-50);
+
+    /* Cards and UI elements */
+    --card-background: var(--color-smoke-30);
+    --sidebar-background: var(--color-smoke-50);
+    --quotebox-background: var(--color-smoke-30);
+    --kbd-background: var(--color-smoke-50);
+    --kbd-border-color: var(--color-gray-30);
 }
 
+/* Syntax highlighting in dark mode */
+html[data-theme="dark"] .highlight {
+    background-color: #282c34 !important;
+}
+
+/* Preserve image colors */
+html[data-theme="dark"] img,
+html[data-theme="dark"] video {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Component-specific fixes */
+html[data-theme="dark"] .card {
+    background-color: var(--color-smoke-30);
+    border-color: var(--color-smoke-50);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .doc .admonitionblock td.content {
+    background: var(--color-smoke-50);
+}
+
+html[data-theme="dark"] .doc p code {
+    background: var(--code-background);
+    color: var(--code-font-color);
+}
+
+html[data-theme="dark"] .doc table.tableblock th {
+    background-color: var(--color-smoke-70);
+}
+
+html[data-theme="dark"] ul.pagination li.active a {
+    background: var(--link-font-color);
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .nav-menu h3.title {
+    color: var(--color-jet-50);
+}
+
+html[data-theme="dark"] .social-links a {
+    color: var(--color-jet-50);
+}
+
+/* Code-specific styling for dark mode */
+html[data-theme="dark"] .doc .listingblock pre:not(.highlight),
+html[data-theme="dark"] .doc .literalblock pre {
+    background: var(--pre-background);
+    color: var(--code-font-color);
+}
+
+html[data-theme="dark"] .doc pre.highlight code {
+    color: var(--code-font-color);
+}
+
+/* Syntax highlighting adjustments for dark mode */
+html[data-theme="dark"] .highlight .c {
+    color: #7e8aa1
+}
+
+/* Comment */
+html[data-theme="dark"] .highlight .k {
+    color: #FFAD66
+}
+
+/* Keyword */
+html[data-theme="dark"] .highlight .s {
+    color: #D5FF80
+}
+
+/* String */
+html[data-theme="dark"] .highlight .n {
+    color: #e4e2d8
+}
+
+/* Name */
+html[data-theme="dark"] .highlight .o {
+    color: #FFAD66
+}
+
+/* Operator */
+html[data-theme="dark"] .highlight .p {
+    color: #e4e2d8
+}
+
+/* Punctuation */
+html[data-theme="dark"] .highlight .nf {
+    color: #FFD173
+}
+
+/* Function name */

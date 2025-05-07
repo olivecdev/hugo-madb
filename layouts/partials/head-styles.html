@@ -14,22 +14,25 @@
 {{ $pagination_list := resources.Get "css/pagination-list.css" }}
 {{ $header := resources.Get "css/header.css" }}
 {{ $footer := resources.Get "css/footer.css" }}
+{{ $share := resources.Get "css/share.css" }}
 {{ $fa := resources.Get "plugins/fontawesome/font-awesome.min.css"}}
 {{ $highlightPath := "css/custom_highlight.css" }}
 {{ if .Site.Params.useHighlightjs }}
-{{ $highlightPath = default "github" .Site.Params.adocHighlightTheme | printf "%s.min.css" | path.Join "plugins/highlightjs/" }}
+{{ $highlightPath = default "github" .Site.Params.adocHighlightTheme | printf "%s.min.css" | path.Join
+"plugins/highlightjs/" }}
 {{ end }}
 {{ fmt.Warnf "Loading styles for syntax highlighting from asset %s" $highlightPath }}
 {{ $highlight := resources.Get $highlightPath }}
 {{ $print := resources.Get "css/print.css" }}
 {{ $r := slice $vars $base $body $preview $nav $main $toolbar $breadcrumbs $page_versions
-$toc $doc $pagination $pagination_list $header $footer $fa  $print }}
+$toc $doc $pagination $pagination_list $header $share $footer $fa $print }}
 {{ range .Site.Params.custom_css }}
-  {{ $custom := resources.Get . }}
-  {{ $r = $r | append $custom }}
+{{ $custom := resources.Get . }}
+{{ $r = $r | append $custom }}
 {{ end }}
 {{ with $highlight }}
 {{ $r = $r | append $highlight }}
 {{ end }}
 {{ $site := $r | resources.Concat "css/site.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr }}>
+<link rel="stylesheet" href="{{ $site.RelPermalink }}" {{ $site.Data.Integrity | printf "integrity=%q" | safeHTMLAttr
+  }}>

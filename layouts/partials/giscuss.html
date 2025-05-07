@@ -1,20 +1,48 @@
 {{ if not hugo.IsDevelopment }}
 <div id="giscus-comments">
-  <script src="https://giscus.app/client.js"
-    data-repo="{{ .repo }}"
-    {{ with .repo_id }}  data-repo-id="{{ . }}" {{end}}
-    data-category="{{ .category }}"
-    {{ with .category_id }}  data-category-id="{{ . }}" {{end}}
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="preferred_color_scheme"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-  </script>
+  <script src="https://giscus.app/client.js" data-repo="{{ .repo }}" {{ with .repo_id }} data-repo-id="{{ . }}" {{end}}
+    data-category="{{ .category }}" {{ with .category_id }} data-category-id="{{ . }}" {{end}} data-mapping="pathname"
+    data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
+    data-theme="preferred_color_scheme" data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+    </script>
 </div>
+
+<script>
+  // Update Giscus theme when site theme changes
+  function updateGiscusTheme() {
+    const theme = localStorage.getItem('theme') || 'light';
+    const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+
+    iframe.contentWindow.postMessage({
+      giscus: {
+        setConfig: {
+          theme: giscusTheme
+        }
+      }
+    }, 'https://giscus.app');
+  }
+
+  // Update theme when it changes
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.attributeName === 'data-theme') {
+        updateGiscusTheme();
+      }
+    });
+  });
+
+  // Start observing html element for data-theme changes
+  observer.observe(document.documentElement, { attributes: true });
+
+  // Also update when iframe loads
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://giscus.app') return;
+    if (e.data.giscus?.resizeHeight) {
+      updateGiscusTheme();
+    }
+  });
+</script>
 {{ end }}

@@ -2,6 +2,7 @@
   font-family: 'Ubuntu';
   src: url('../fonts/UbuntuSans[wdth,wght].woff2') format('woff2');
 }
+
 @font-face {
   font-family: 'Ubuntu';
   src: url('../fonts/UbuntuSans-italic[wdth,wght].woff2') format('woff2');
@@ -49,10 +50,14 @@
   --color-jet-80: #191919;
   --color-black: #000;
   /* fonts */
-  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-size: 1.0625em; /* 17px */
-  --body-font-size--desktop: 1.125em; /* 18px */
-  --body-font-size--print: 0.9375em; /* 15px */
+  --rem-base: 18;
+  /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+  --body-font-size: 1.0625em;
+  /* 17px */
+  --body-font-size--desktop: 1.125em;
+  /* 18px */
+  --body-font-size--print: 0.9375em;
+  /* 15px */
   --body-line-height: 1.15;
   --body-font-color: var(--color-jet-70);
   --body-font-family: 'Open Sans', "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";

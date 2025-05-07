@@ -39,17 +39,26 @@
   background-size: 41.5%;
 }
 
+/* Replace the SVG-based home link with a font icon approach */
 .home-link {
-  display: block;
-  background: url(../img/home-o.svg) no-repeat center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: calc(var(--toolbar-height) / 2);
   width: calc(var(--toolbar-height) / 2);
   margin: calc(var(--toolbar-height) / 4);
+  margin-right: 0;
+  padding-right: 0;
+  color: var(--toolbar-muted-color);
+}
+
+.home-link i {
+  font-size: 1.2rem;
 }
 
 .home-link:hover,
 .home-link.is-current {
-  background-image: url(../img/home.svg);
+  color: var(--toolbar-font-color);
 }
 
 .edit-this-page {
@@ -135,12 +144,14 @@
 }
 
 .search-bar {
-  display:inline-block;
+  display: inline-block;
   position: relative
 }
+
 .search-bar:after {
   font-family: 'FontAwesome';
-  content: '\f002'; /* search icon */
+  content: '\f002';
+  /* search icon */
   position: absolute;
   right: 1.5rem;
   top: 0.5rem;
