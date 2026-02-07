@@ -4,9 +4,9 @@
   line-height: 1;
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 64rem) {
   .page-versions {
-    margin-right: 0.7rem;
+    margin-right: clamp(0.5rem, 1vw, 0.7rem);
   }
 }
 

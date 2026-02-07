@@ -1,7 +1,7 @@
 .blog-list {
-    max-width: 800px;
+    max-width: min(800px, 95vw);
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .blog-list article {
@@ -9,7 +9,7 @@
     border-radius: 8px;
     box-shadow: var(--card-shadow);
     margin-bottom: 1.5rem;
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
     transition: transform 0.2s ease;
 }
 
@@ -29,48 +29,78 @@
     margin-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .blog-list {
-        padding: 0 0.5rem;
-    }
-
-    .blog-list article {
-        padding: 1rem;
-    }
-
-    .card-feature {
-        max-width: 100%;
-    }
-    .card-contents {
-        max-width: 100%
-    }
-    .preview-container {
-        display: block;
-    }
-}
-@media (min-width: 769px) {
-    .blog-list {
-        padding: 0 0.5rem;
-    }
-
-    .preview-container {
-        display: flex;
-    }
-
-    .blog-list article {
-        padding: 1rem;
-    }
-
-    .card-feature {
-        max-width: 25%;
-    }
-    .card-contents {
-        max-width: 75%
-    }
-}
-
+/* Use container-based layout for preview cards */
 .preview-container {
     padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@supports (container-type: inline-size) {
+    .blog-list {
+        container-type: inline-size;
+        container-name: blog-list;
+    }
+
+    @container blog-list (max-width: 48rem) {
+        .preview-container {
+            flex-direction: column;
+        }
+
+        .card-feature {
+            max-width: 100%;
+        }
+
+        .card-contents {
+            max-width: 100%;
+        }
+    }
+
+    @container blog-list (min-width: 48.001rem) {
+        .preview-container {
+            flex-direction: row;
+        }
+
+        .card-feature {
+            max-width: 25%;
+        }
+
+        .card-contents {
+            max-width: 75%;
+        }
+    }
+}
+
+/* Fallback for browsers without container query support */
+@supports not (container-type: inline-size) {
+    @media (max-width: 768px) {
+        .preview-container {
+            flex-direction: column;
+        }
+
+        .card-feature {
+            max-width: 100%;
+        }
+
+        .card-contents {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .preview-container {
+            flex-direction: row;
+        }
+
+        .card-feature {
+            max-width: 25%;
+        }
+
+        .card-contents {
+            max-width: 75%;
+        }
+    }
 }
 
 .preview-container img {

@@ -45,13 +45,14 @@
   height: 0;
 }
 
-@media screen and (min-width: 1024px) {
+/* Fluid typography for TOC */
+@media (min-width: 64rem) {
   .toc .toc-menu h3 {
-    font-size: calc(15 / var(--rem-base) * 1rem);
+    font-size: clamp(calc(13.5 / var(--rem-base) * 1rem), 0.9rem, calc(15 / var(--rem-base) * 1rem));
   }
 
   .toc .toc-menu ul {
-    font-size: calc(13.5 / var(--rem-base) * 1rem);
+    font-size: clamp(calc(12.5 / var(--rem-base) * 1rem), 0.85rem, calc(13.5 / var(--rem-base) * 1rem));
   }
 }
 
@@ -134,23 +135,48 @@
   /* Override sticky positioning */
 }
 
-/* Responsive layout */
-@media screen and (max-width: 1359px) {
-  .desktop-toc {
-    display: none;
+/* Responsive layout - use container queries where supported */
+@supports (container-type: inline-size) {
+  @container main-content (max-width: 1359px) {
+    .desktop-toc {
+      display: none;
+    }
+
+    .mobile-toc {
+      display: block;
+    }
   }
 
-  .mobile-toc {
-    display: block;
+  @container main-content (min-width: 1360px) {
+    .mobile-toc {
+      display: none;
+    }
+
+    .desktop-toc {
+      display: block;
+    }
   }
 }
 
-@media screen and (min-width: 1360px) {
-  .mobile-toc {
-    display: none;
+/* Fallback for browsers without container query support */
+@supports not (container-type: inline-size) {
+  @media screen and (max-width: 1359px) {
+    .desktop-toc {
+      display: none;
+    }
+
+    .mobile-toc {
+      display: block;
+    }
   }
 
-  .desktop-toc {
-    display: block;
+  @media screen and (min-width: 1360px) {
+    .mobile-toc {
+      display: none;
+    }
+
+    .desktop-toc {
+      display: block;
+    }
   }
 }

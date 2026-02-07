@@ -3,24 +3,21 @@
   top: var(--navbar-height);
   left: 0;
   width: 100%;
-  font-size: calc(17 / var(--rem-base) * 1rem);
+  font-size: clamp(calc(15.5 / var(--rem-base) * 1rem), 1rem, calc(17 / var(--rem-base) * 1rem));
   z-index: var(--z-index-nav);
   visibility: hidden;
 }
 
-@media screen and (min-width: 769px) {
-  .nav-container {
-    width: var(--nav-width);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .nav-container {
-    font-size: calc(15.5 / var(--rem-base) * 1rem);
-    flex: none;
-    position: static;
-    top: 0;
-    visibility: visible;
+/* Progressive enhancement for larger viewports */
+@supports (width: min(100%, 20rem)) {
+  @media (min-width: 48rem) {
+    .nav-container {
+      width: var(--nav-width);
+      flex: none;
+      position: static;
+      top: 0;
+      visibility: visible;
+    }
   }
 }
 
@@ -35,18 +32,18 @@
   height: var(--nav-height);
 }
 
-@media screen and (min-width: 769px) {
+@media (min-width: 48rem) {
   .nav {
     box-shadow: 0.5px 0 3px var(--nav-border-color);
+    top: var(--navbar-height);
+    position: sticky;
+    height: var(--nav-height--desktop);
   }
 }
 
-@media screen and (min-width: 1024px) {
+@supports not (position: sticky) {
   .nav {
-    top: var(--navbar-height);
-    box-shadow: none;
-    position: sticky;
-    height: var(--nav-height--desktop);
+    position: relative;
   }
 }
 

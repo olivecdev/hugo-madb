@@ -131,36 +131,18 @@ html[data-theme="dark"] .share-button:hover {
     border-color: var(--toolbar-font-color);
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-    .share-buttons {
-        gap: 0.5rem;
-    }
-
-    .share-button {
-        width: 2.2rem;
-        height: 2.2rem;
-    }
-
-    .share-button i {
-        font-size: 1rem;
-    }
+/* Responsive adjustments - use fluid sizing */
+.share-buttons {
+    gap: clamp(0.4rem, 1vw, 0.6rem);
 }
 
-/* For very small screens, make icons a bit smaller */
-@media (max-width: 400px) {
-    .share-buttons {
-        gap: 0.4rem;
-    }
+.share-button {
+    width: clamp(2rem, 5vw, 3.5rem);
+    height: clamp(2rem, 5vw, 3.5rem);
+}
 
-    .share-button {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .share-button i {
-        font-size: 0.9rem;
-    }
+.share-button i {
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
 /* High contrast mode for accessibility */

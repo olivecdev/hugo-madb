@@ -1,20 +1,18 @@
 .doc {
   color: var(--doc-font-color);
-  font-size: var(--doc-font-size);
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
   hyphens: auto;
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);
   max-width: var(--doc-max-width);
   padding: 0 1rem 4rem;
+  flex: auto;
+  min-width: 0;
 }
 
-@media screen and (min-width: 1024px) {
+@supports (margin-inline: 1rem) {
   .doc {
-    flex: auto;
-    font-size: var(--doc-font-size--desktop);
-    margin: var(--doc-margin--desktop);
-    max-width: var(--doc-max-width--desktop);
-    min-width: 0;
+    margin-inline: var(--doc-margin-inline);
   }
 }
 
@@ -34,14 +32,8 @@
 }
 
 .doc > h1.page:first-child {
-  font-size: calc(36 / var(--rem-base) * 1rem);
-  margin: 1.5rem 0;
-}
-
-@media screen and (min-width: 769px) {
-  .doc > h1.page:first-child {
-    margin-top: 2.5rem;
-  }
+  font-size: clamp(calc(28 / var(--rem-base) * 1rem), 1.5rem + 1vw, calc(36 / var(--rem-base) * 1rem));
+  margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0;
 }
 
 h1.page + aside.toc.embedded {

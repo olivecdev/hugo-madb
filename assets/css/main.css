@@ -1,75 +1,83 @@
-@media screen and (max-width: 1359px) {
-  aside.toc.sidebar {
-    display: none;
-  }
-
-  main>.content {
-    overflow-x: auto;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1360px) {
+/* Use container queries for responsive TOC display */
+@supports (container-type: inline-size) {
   main {
-    flex: auto;
-    min-width: 0;
-    /* min-width: 0 required for flexbox to constrain overflowing elements */
+    container-type: inline-size;
+    container-name: main-content;
   }
 
-  main>.content {
-    max-width: 1024px;
-    display: flex;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
+  /* Hide sidebar TOC in narrow containers, show embedded */
+  @container main-content (max-width: 1359px) {
+    aside.toc.sidebar {
+      display: none;
+    }
   }
 
-  aside.toc.embedded {
-    display: none;
+  /* Show sidebar TOC in wide containers, hide embedded */
+  @container main-content (min-width: 1360px) {
+    aside.toc.embedded {
+      display: none;
+    }
+
+    aside.toc.sidebar {
+      flex: 0 0 var(--toc-width);
+      order: 1;
+    }
   }
 
-  aside.toc.sidebar {
-    flex: 0 0 var(--toc-width);
-    order: 1;
+  @container main-content (min-width: 1216px) {
+    aside.toc.sidebar {
+      flex-basis: var(--toc-width--widescreen);
+    }
   }
 }
 
-@media screen and (min-width: 1216px) {
-  aside.toc.sidebar {
-    flex-basis: var(--toc-width--widescreen);
+/* Fallback for browsers without container query support */
+@supports not (container-type: inline-size) {
+  @media screen and (max-width: 1359px) {
+    aside.toc.sidebar {
+      display: none;
+    }
   }
+
+  @media screen and (min-width: 1360px) {
+    aside.toc.embedded {
+      display: none;
+    }
+
+    aside.toc.sidebar {
+      flex: 0 0 var(--toc-width);
+      order: 1;
+    }
+  }
+
+  @media screen and (min-width: 1216px) {
+    aside.toc.sidebar {
+      flex-basis: var(--toc-width--widescreen);
+    }
+  }
+}
+
+main {
+  flex: auto;
+  min-width: 0;
+  /* min-width: 0 required for flexbox to constrain overflowing elements */
+}
+
+main>.content {
+  max-width: min(1024px, 100%);
+  display: flex;
+  margin: 0 auto;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+  width: 100%;
+  overflow-x: auto;
 }
 
 .signature {
   display: block;
   position: relative;
   width: 100%;
-}
-
-@media (max-aspect-ratio: 370/834) {
-  .signature {
-    aspect-ratio: 1/2;
-  }
-}
-
-@media (min-aspect-ratio: 370.001/834) and (max-aspect-ratio: 600/834) {
-  .signature {
-    aspect-ratio: 1/1;
-  }
-}
-
-@media (min-aspect-ratio: 600.001/834) and (max-aspect-ratio: 1020/834) {
-  .signature {
-    aspect-ratio: 3/1;
-  }
-}
-
-@media (min-aspect-ratio:1020.001/834) {
-  .signature {
-    aspect-ratio: 4/1;
-  }
+  /* Use fluid aspect ratio based on container width */
+  aspect-ratio: clamp(1/2, calc(var(--signature-ratio, 3)), 4/1);
 }
 
 .signature iframe {
