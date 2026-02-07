@@ -1,89 +1,79 @@
-@media screen and (max-width: 1359px) {
-  aside.toc.sidebar {
-    display: none;
+@layer components {
+  @media (width < 1360px) {
+    aside.toc.sidebar {
+      display: none;
+    }
+
+    main > .content {
+      overflow-x: auto;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      inline-size: 100%;
+    }
   }
 
-  main>.content {
-    overflow-x: auto;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
-  }
-}
+  @media (width >= 1360px) {
+    main {
+      flex: auto;
+      min-inline-size: 0;
+    }
 
-@media screen and (min-width: 1360px) {
-  main {
-    flex: auto;
-    min-width: 0;
-    /* min-width: 0 required for flexbox to constrain overflowing elements */
-  }
+    main > .content {
+      max-inline-size: 1024px;
+      display: flex;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      inline-size: 100%;
+    }
 
-  main>.content {
-    max-width: 1024px;
-    display: flex;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
-  }
+    aside.toc.embedded {
+      display: none;
+    }
 
-  aside.toc.embedded {
-    display: none;
+    aside.toc.sidebar {
+      flex: 0 0 var(--toc-inline-size);
+      order: 1;
+    }
   }
 
-  aside.toc.sidebar {
-    flex: 0 0 var(--toc-width);
-    order: 1;
+  @media (width >= 1216px) {
+    aside.toc.sidebar {
+      flex-basis: var(--toc-inline-size--widescreen);
+    }
   }
-}
 
-@media screen and (min-width: 1216px) {
-  aside.toc.sidebar {
-    flex-basis: var(--toc-width--widescreen);
-  }
-}
-
-.signature {
-  display: block;
-  position: relative;
-  width: 100%;
-}
-
-@media (max-aspect-ratio: 370/834) {
   .signature {
-    aspect-ratio: 1/2;
+    display: block;
+    position: relative;
+    inline-size: 100%;
+    
+    @media (max-aspect-ratio: 370/834) {
+      aspect-ratio: 1/2;
+    }
+    
+    @media (min-aspect-ratio: 370.001/834) and (max-aspect-ratio: 600/834) {
+      aspect-ratio: 1/1;
+    }
+    
+    @media (min-aspect-ratio: 600.001/834) and (max-aspect-ratio: 1020/834) {
+      aspect-ratio: 3/1;
+    }
+    
+    @media (min-aspect-ratio: 1020.001/834) {
+      aspect-ratio: 4/1;
+    }
+    
+    & iframe {
+      position: absolute;
+      inline-size: 100%;
+      block-size: 100%;
+      margin-block: 1rem;
+      inset: 0;
+    }
   }
-}
 
-@media (min-aspect-ratio: 370.001/834) and (max-aspect-ratio: 600/834) {
-  .signature {
-    aspect-ratio: 1/1;
+  .signature-info {
+    inline-size: 100%;
+    margin-block-start: 1rem;
   }
-}
-
-@media (min-aspect-ratio: 600.001/834) and (max-aspect-ratio: 1020/834) {
-  .signature {
-    aspect-ratio: 3/1;
-  }
-}
-
-@media (min-aspect-ratio:1020.001/834) {
-  .signature {
-    aspect-ratio: 4/1;
-  }
-}
-
-.signature iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 1rem 0 1rem 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.signature-info {
-  width: 100%;
-  margin-top: 1rem;
 }
