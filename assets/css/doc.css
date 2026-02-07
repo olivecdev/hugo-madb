@@ -1,6 +1,6 @@
 .doc {
   color: var(--doc-font-color);
-  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  font-size: clamp(0.9rem, 0.9rem + 0.25vw, 1.05rem);
   hyphens: auto;
   line-height: var(--doc-line-height);
   margin: var(--doc-margin);

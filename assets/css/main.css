@@ -64,7 +64,7 @@ main {
 }
 
 main>.content {
-  max-width: min(1024px, 100%);
+  max-width: min(64rem, 100%);
   display: flex;
   margin: 0 auto;
   padding: 0 clamp(0.5rem, 2vw, 1rem);
@@ -76,8 +76,26 @@ main>.content {
   display: block;
   position: relative;
   width: 100%;
-  /* Use fluid aspect ratio based on container width */
-  aspect-ratio: clamp(1/2, calc(var(--signature-ratio, 3)), 4/1);
+  /* Fluid aspect ratio - defaults to 3:1, can be customized */
+  aspect-ratio: 3/1;
+}
+
+@media (max-width: 30rem) {
+  .signature {
+    aspect-ratio: 1/2;
+  }
+}
+
+@media (min-width: 30.001rem) and (max-width: 48rem) {
+  .signature {
+    aspect-ratio: 1/1;
+  }
+}
+
+@media (min-width: 80rem) {
+  .signature {
+    aspect-ratio: 4/1;
+  }
 }
 
 .signature iframe {
