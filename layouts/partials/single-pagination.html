@@ -1,10 +1,14 @@
 {{ if or .PrevInSection .NextInSection }}
-<nav class="pagination" aria-label="Page navigation">
+<nav class="pagination single-pagination" aria-label="Page navigation">
     {{ with .PrevInSection }}
-    <a class="pagination__prev" href="{{ .RelPermalink }}" aria-label="Previous page">&laquo; Prev</a>
+    <a class="pagination__prev" href="{{ .RelPermalink }}" aria-label="Previous article">
+        <span class="pagination__label">&laquo; {{ .Title | truncate 35 }}</span>
+    </a>
     {{ end }}
     {{ with .NextInSection }}
-    <a class="pagination__next" href="{{ .RelPermalink }}" aria-label="Next page">Next &raquo;</a>
+    <a class="pagination__next" href="{{ .RelPermalink }}" aria-label="Next article">
+        <span class="pagination__label">{{ .Title | truncate 35 }} &raquo;</span>
+    </a>
     {{ end }}
 </nav>
 {{ end }}
