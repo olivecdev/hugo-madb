@@ -77,7 +77,6 @@
     --warning-color: oklch(75% 0.17 55);
 
     /* Tables */
-    /* Tables */
     --table-border-color: var(--color-smoke-90);
     --table-stripe-background: var(--color-smoke-30);
     --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);

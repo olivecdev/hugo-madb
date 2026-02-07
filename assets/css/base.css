@@ -17,7 +17,7 @@
     font-family: var(--body-font-family);
     line-height: var(--body-line-height);
     margin: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere; /* use when hyphens are disabled or aren't sufficient */
   }
 
   a {
