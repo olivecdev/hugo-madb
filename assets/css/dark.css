@@ -1,23 +1,24 @@
-html[data-theme="dark"] {
-    /* Base colors for dark theme */
-    --color-white: #171717;
-    --color-smoke-10: #252525;
-    --color-smoke-30: #2c2c2c;
-    --color-smoke-50: #333333;
-    --color-smoke-70: #3d3d3d;
-    --color-smoke-90: #454545;
-    --color-gray-10: #6a6a6a;
-    --color-gray-30: #8d8d8d;
-    --color-gray-50: #ababab;
-    --color-gray-70: #c4c4c4;
-    --color-jet-20: #d4d4d4;
-    --color-jet-30: #dedede;
-    --color-jet-50: #e8e8e8;
-    --color-jet-70: #f5f5f5;
-    --color-jet-80: #fafafa;
-    --color-black: #ffffff;
+@layer base {
+  html[data-theme="dark"] {
+    /* Primitive Colors - Dark Theme (OKLCH) */
+    --color-white: oklch(14% 0 0);
+    --color-smoke-10: oklch(18% 0 0);
+    --color-smoke-30: oklch(21% 0 0);
+    --color-smoke-50: oklch(24% 0 0);
+    --color-smoke-70: oklch(28% 0 0);
+    --color-smoke-90: oklch(32% 0 0);
+    --color-gray-10: oklch(47% 0 0);
+    --color-gray-30: oklch(60% 0 0);
+    --color-gray-50: oklch(72% 0 0);
+    --color-gray-70: oklch(80% 0 0);
+    --color-jet-20: oklch(85% 0 0);
+    --color-jet-30: oklch(89% 0 0);
+    --color-jet-50: oklch(93% 0 0);
+    --color-jet-70: oklch(96% 0 0);
+    --color-jet-80: oklch(98% 0 0);
+    --color-black: oklch(100% 0 0);
 
-    /* Body */
+    /* Semantic Overrides */
     --body-background: var(--color-white);
     --body-font-color: var(--color-jet-20);
     --scrollbar-thumb-color: var(--color-gray-30);
@@ -25,19 +26,18 @@ html[data-theme="dark"] {
     /* Headings */
     --heading-font-color: var(--color-jet-50);
 
-    /* Links */
-    --link-font-color: #5c9ae6;
-    --link_hover-font-color: #7db1f0;
+    /* Links (OKLCH) */
+    --link-font-color: oklch(71% 0.13 250);
+    --link_hover-font-color: oklch(78% 0.13 250);
 
     /* Panel and component backgrounds */
     --panel-background: var(--color-smoke-30);
     --panel-border-color: var(--color-smoke-90);
 
     /* Navbar - preserved as-is */
-    --navbar-background: #000000;
-    /* Keep black navbar */
-    --navbar-font-color: #ffffff;
-    --navbar_hover-background: #222222;
+    --navbar-background: oklch(0% 0 0);
+    --navbar-font-color: oklch(100% 0 0);
+    --navbar_hover-background: oklch(18% 0 0);
     --navbar-button-background: var(--color-white);
     --navbar-button-border-color: var(--panel-border-color);
     --navbar-button-font-color: var(--body-font-color);
@@ -64,131 +64,108 @@ html[data-theme="dark"] {
 
     /* Code and pre blocks */
     --code-background: var(--color-smoke-70);
-    --code-font-color: #e6e6e6;
+    --code-font-color: oklch(92% 0 0);
     --pre-background: var(--color-smoke-50);
     --pre-border-color: var(--color-gray-10);
     --pre-annotation-font-color: var(--color-gray-50);
 
-    /* Admonitions - preserve colors but adjust for dark theme */
-    --caution-color: #c67bc3;
-    --important-color: #e95c5c;
-    --note-color: #4a9fee;
-    --tip-color: #5dc468;
-    --warning-color: #f3a149;
+    /* Admonitions - Dark Theme (OKLCH) */
+    --caution-color: oklch(69% 0.19 320);
+    --important-color: oklch(68% 0.22 25);
+    --note-color: oklch(70% 0.20 250);
+    --tip-color: oklch(72% 0.19 145);
+    --warning-color: oklch(75% 0.17 55);
 
     /* Tables */
     --table-border-color: var(--color-smoke-90);
     --table-stripe-background: var(--color-smoke-30);
     --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
-
+    --sidebar-background: var(--color-smoke-70);
+    --abstract-background: var(--color-smoke-50);
+    --quote-background: var(--color-smoke-50);
+    --footer-background: var(--color-smoke-90);
+    
     /* TOC */
     --toc-border-color: var(--panel-border-color);
 
     /* Footer */
-    --footer-background: var(--color-smoke-90);
     --footer-font-color: var(--color-gray-70);
     --footer-link-font-color: var(--color-jet-50);
 
     /* Cards and UI elements */
     --card-background: var(--color-smoke-30);
-    --sidebar-background: var(--color-smoke-50);
     --quotebox-background: var(--color-smoke-30);
     --kbd-background: var(--color-smoke-50);
     --kbd-border-color: var(--color-gray-30);
-}
+  }
 
-/* Syntax highlighting in dark mode */
-html[data-theme="dark"] .highlight {
-    background-color: #282c34 !important;
-}
+  /* Syntax highlighting in dark mode */
+  html[data-theme="dark"] .highlight {
+    background-color: oklch(24% 0.01 250) !important;
+  }
 
-/* Preserve image colors */
-html[data-theme="dark"] img,
-html[data-theme="dark"] video {
+  /* Preserve image colors */
+  html[data-theme="dark"] img,
+  html[data-theme="dark"] video {
     filter: brightness(0.9) contrast(1.1);
-}
+  }
 
-/* Component-specific fixes */
-html[data-theme="dark"] .card {
+  /* Component-specific fixes */
+  html[data-theme="dark"] .card {
     background-color: var(--color-smoke-30);
     border-color: var(--color-smoke-50);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 0 4px 8px oklch(0% 0 0 / 0.3);
+    
+    &:hover {
+      box-shadow: 0 6px 12px oklch(0% 0 0 / 0.4);
+    }
+  }
 
-html[data-theme="dark"] .card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
+  html[data-theme="dark"] {
+    .doc .admonitionblock td.content {
+      background: var(--color-smoke-50);
+    }
 
-html[data-theme="dark"] .doc .admonitionblock td.content {
-    background: var(--color-smoke-50);
-}
+    .doc p code {
+      background: var(--code-background);
+      color: var(--code-font-color);
+    }
 
-html[data-theme="dark"] .doc p code {
-    background: var(--code-background);
-    color: var(--code-font-color);
-}
+    .doc table.tableblock th {
+      background-color: var(--color-smoke-70);
+    }
+    
+    ul.pagination li.active a {
+      background: var(--link-font-color);
+      color: oklch(100% 0 0);
+    }
 
-html[data-theme="dark"] .doc table.tableblock th {
-    background-color: var(--color-smoke-70);
-}
+    .nav-menu h3.title {
+      color: var(--color-jet-50);
+    }
 
-html[data-theme="dark"] ul.pagination li.active a {
-    background: var(--link-font-color);
-    color: #ffffff;
-}
+    .social-links a {
+      color: var(--color-jet-50);
+    }
 
-html[data-theme="dark"] .nav-menu h3.title {
-    color: var(--color-jet-50);
-}
+    .doc .listingblock pre:not(.highlight),
+    .doc .literalblock pre {
+      background: var(--pre-background);
+      color: var(--code-font-color);
+    }
 
-html[data-theme="dark"] .social-links a {
-    color: var(--color-jet-50);
-}
+    .doc pre.highlight code {
+      color: var(--code-font-color);
+    }
 
-/* Code-specific styling for dark mode */
-html[data-theme="dark"] .doc .listingblock pre:not(.highlight),
-html[data-theme="dark"] .doc .literalblock pre {
-    background: var(--pre-background);
-    color: var(--code-font-color);
-}
-
-html[data-theme="dark"] .doc pre.highlight code {
-    color: var(--code-font-color);
-}
-
-/* Syntax highlighting adjustments for dark mode */
-html[data-theme="dark"] .highlight .c {
-    color: #7e8aa1
-}
-
-/* Comment */
-html[data-theme="dark"] .highlight .k {
-    color: #FFAD66
-}
-
-/* Keyword */
-html[data-theme="dark"] .highlight .s {
-    color: #D5FF80
-}
-
-/* String */
-html[data-theme="dark"] .highlight .n {
-    color: #e4e2d8
-}
-
-/* Name */
-html[data-theme="dark"] .highlight .o {
-    color: #FFAD66
-}
-
-/* Operator */
-html[data-theme="dark"] .highlight .p {
-    color: #e4e2d8
-}
-
-/* Punctuation */
-html[data-theme="dark"] .highlight .nf {
-    color: #FFD173
-}
-
-/* Function name */
+    /* Syntax highlighting adjustments */
+    .highlight {
+      .c { color: oklch(60% 0.03 250); } /* Comment */
+      .k { color: oklch(75% 0.12 55); } /* Keyword */
+      .s { color: oklch(88% 0.15 130); } /* String */
+      .n { color: oklch(90% 0.02 60); } /* Name */
+      .o { color: oklch(75% 0.12 55); } /* Operator */
+      .p { color: oklch(90% 0.02 60); } /* Punctuation */
+      .nf { color: oklch(82% 0.10 80); } /* Function name */
+    }
+  }

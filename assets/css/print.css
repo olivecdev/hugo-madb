@@ -1,82 +1,84 @@
-@page {
-  margin: 0.5in;
-}
-
-@media print {
-  .hide-for-print {
-    display: none !important;
+@layer components {
+  @page {
+    margin: 0.5in;
   }
 
-  html {
-    font-size: var(--body-font-size--print);
-  }
+  @media print {
+    .hide-for-print {
+      display: none !important;
+    }
 
-  a {
-    color: inherit !important;
-    text-decoration: underline;
-  }
+    html {
+      font-size: var(--body-font-size--print);
+    }
 
-  a.bare,
-  a[href^="#"],
-  a[href^="mailto:"] {
-    text-decoration: none;
-  }
+    a {
+      color: inherit !important;
+      text-decoration: underline;
 
-  tr,
-  img,
-  object,
-  svg {
-    page-break-inside: avoid;
-  }
+      &.bare,
+      &[href^="#"],
+      &[href^="mailto:"] {
+        text-decoration: none;
+      }
+    }
 
-  thead {
-    display: table-header-group;
-  }
+    tr,
+    img,
+    object,
+    svg {
+      page-break-inside: avoid;
+    }
 
-  pre {
-    hyphens: none;
-    white-space: pre-wrap;
-  }
+    thead {
+      display: table-header-group;
+    }
 
-  body {
-    padding-top: 2rem;
-  }
+    pre {
+      hyphens: none;
+      white-space: pre-wrap;
+    }
 
-  .navbar {
-    background: none;
-    color: inherit;
-    position: absolute;
-  }
+    body {
+      padding-block-start: 2rem;
+    }
 
-  .navbar * {
-    color: inherit !important;
-  }
+    .navbar {
+      background: none;
+      color: inherit;
+      position: absolute;
 
-  #topbar-nav,
-  .nav-container,
-  .toolbar {
-    display: none;
-  }
+      * {
+        color: inherit !important;
+      }
+    }
 
-  .doc {
-    color: inherit;
-    margin: auto;
-    max-width: none;
-    padding-bottom: 2rem;
-  }
+    #topbar-nav,
+    .nav-container,
+    .toolbar {
+      display: none;
+    }
 
-  .doc .listingblock code[data-lang]::before {
-    display: block;
-  }
+    .doc {
+      color: inherit;
+      margin: auto;
+      max-inline-size: none;
+      padding-block-end: 2rem;
 
-  footer.footer {
-    background: none;
-    border-top: 1px solid var(--panel-border-color);
-    color: var(--quote-attribution-font-color);
-    padding: 0.5rem;
-  }
+      .listingblock code[data-lang]::before {
+        display: block;
+      }
+    }
 
-  .footer * {
-    color: inherit;
+    footer.footer {
+      background: none;
+      border-block-start: 1px solid var(--panel-border-color);
+      color: var(--quote-attribution-font-color);
+      padding: 0.5rem;
+
+      * {
+        color: inherit;
+      }
+    }
   }
 }

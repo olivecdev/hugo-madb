@@ -1,38 +1,38 @@
-.breadcrumbs {
-  display: none;
-  flex: 1 1;
-  padding: 0 0.5rem 0 0.75rem;
-  line-height: var(--nav-line-height);
-}
-
-@media screen and (min-width: 1024px) {
+@layer components {
   .breadcrumbs {
-    display: block;
+    display: none;
+    flex: 1 1;
+    padding: 0 0.5rem 0 0.75rem;
+    line-height: var(--nav-line-height);
+
+    @media (width >= 1024px) {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline;
+      margin: 0;
+
+      &::after {
+        content: "/";
+        padding: 0 0.5rem;
+      }
+
+      &:last-of-type::after {
+        content: none;
+      }
+    }
   }
-}
 
-a + .breadcrumbs {
-  padding-left: 0.05rem;
-}
-
-.breadcrumbs ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.breadcrumbs li {
-  display: inline;
-  margin: 0;
-}
-
-.breadcrumbs li::after {
-  content: "/";
-  padding: 0 0.5rem;
-}
-
-.breadcrumbs li:last-of-type::after {
-  content: none;
+  a + .breadcrumbs {
+    padding-inline-start: 0.05rem;
+  }
 }

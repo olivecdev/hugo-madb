@@ -1,5 +1,7 @@
-/* ==============================
- * Custom styles
- * ==============================
- */
-/* You can override the variables in vars.css to customize the style. */
+@layer components {
+  /* ==============================
+   * Custom styles
+   * ==============================
+   */
+  /* You can override the variables in vars.css to customize the style. */
+}
