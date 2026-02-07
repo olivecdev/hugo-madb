@@ -68,7 +68,7 @@
 
   table {
     border-collapse: collapse;
-    overflow-wrap: normal;
+    overflow-wrap: normal; /* table widths aren't computed as expected when word-wrap is enabled */
   }
 
   @supports (scrollbar-width: thin) {
