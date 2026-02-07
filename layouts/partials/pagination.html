@@ -1,10 +1,18 @@
-{{ if or (.PrevInSection) (.NextInSection) }}
-<nav class="pagination">
-  {{ with .NextInSection }}
-  <span class="prev"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></span>
+{{ if gt .TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination">
+  {{ if .HasPrev }}
+  <a class="pagination__prev" href="{{ .Prev.URL }}" aria-label="Previous page">&laquo; Prev</a>
   {{ end }}
-  {{ with .PrevInSection }}
-  <span class="next"><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></span>
+  <ul class="pagination__list">
+    {{ range .Paginator.Pages }}
+    {{ $page := . }}
+    <li class="pagination__item{{ if eq $page.URL $.URL }} active{{ end }}">
+      <a href="{{ $page.URL }}">{{ $page.PageNumber }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ if .HasNext }}
+  <a class="pagination__next" href="{{ .Next.URL }}" aria-label="Next page">Next &raquo;</a>
   {{ end }}
 </nav>
 {{ end }}

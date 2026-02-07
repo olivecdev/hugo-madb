@@ -7,7 +7,7 @@
   {{ end }}
   {{ .Content }}
   {{ partial "post-signature" . }}
-  {{ partial "pagination" . }}
+  {{ partial "single-pagination.html" . }}
   {{ partial "social-share" . }}
   {{ with .Site.Params.giscuss }}
   {{ partial "giscuss" . }}

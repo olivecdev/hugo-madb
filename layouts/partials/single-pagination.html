@@ -1,0 +1,10 @@
+{{ if or .PrevInSection .NextInSection }}
+<nav class="pagination" aria-label="Page navigation">
+    {{ with .PrevInSection }}
+    <a class="pagination__prev" href="{{ .RelPermalink }}" aria-label="Previous page">&laquo; Prev</a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a class="pagination__next" href="{{ .RelPermalink }}" aria-label="Next page">Next &raquo;</a>
+    {{ end }}
+</nav>
+{{ end }}
