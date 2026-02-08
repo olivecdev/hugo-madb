@@ -5,14 +5,12 @@
     hyphens: auto;
     line-height: var(--doc-line-height);
     margin: var(--doc-margin);
-    max-inline-size: var(--doc-max-width);
+    max-inline-size: var(--doc-max-inline-size);
     padding: 0 1rem 4rem;
 
     @media (width >= 1024px) {
       flex: auto;
-      font-size: var(--doc-font-size--desktop);
       margin: var(--doc-margin--desktop);
-      max-inline-size: var(--doc-max-width--desktop);
       min-inline-size: 0;
     }
 
@@ -52,11 +50,8 @@
 
     > h1.page:first-child {
       font-size: calc(36 / var(--rem-base) * 1rem);
-      margin: 1.5rem 0;
-
-      @media (width >= 769px) {
-        margin-block-start: 2.5rem;
-      }
+      /* Fluid margin: grows from 1.5rem to 2.5rem on larger screens */
+      margin: clamp(1.5rem, 2vw, 2.5rem) 0 1.5rem;
     }
 
     h1.sect0 {
