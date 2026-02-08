@@ -24,6 +24,7 @@ nav.single-pagination {
     justify-content: flex-end;
   }
 
+
   .pagination__label {
     font-weight: var(--body-font-weight-bold);
     /* Fluid font size: smaller on narrow screens, larger on wide screens */
@@ -60,6 +61,14 @@ nav.single-pagination {
       transform: translateY(-2px);
     }
   }
+
+  a.pagination__disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    color: var(--body-font-color);
+    text-decoration: none;
+  }
+
 }
 
 html[dir="rtl"] nav.single-pagination {

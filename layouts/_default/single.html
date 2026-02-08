@@ -2,7 +2,6 @@
 <article class="doc">
   <h1 class="page">{{ .Title | safeHTML }}</h1>
   {{ partial "post-meta.html" . }}
-  {{ partial "toc.html" . }}
   {{ .Content }}
   {{ partial "post-signature" . }}
   {{ partial "single-pagination.html" . }}
@@ -11,4 +10,6 @@
   {{ partial "giscuss" . }}
   {{ end }}
 </article>
+{{ partial "toc.html" . }}
 {{ end }}
+
