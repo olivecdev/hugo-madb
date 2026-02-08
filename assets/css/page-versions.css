@@ -1,12 +1,9 @@
 @layer components {
   .page-versions {
-    margin: 0 0.2rem 0 auto;
+    /* Fluid margin: adjusts based on available space */
+    margin: 0 clamp(0.2rem, 1.5vw, 0.7rem) 0 auto;
     position: relative;
     line-height: 1;
-
-    @media (width >= 1024px) {
-      margin-inline-end: 0.7rem;
-    }
 
     .version-menu-toggle {
       color: inherit;

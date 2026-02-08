@@ -36,7 +36,8 @@
   .toc .toc-menu {
     h3 {
       color: var(--toc-heading-font-color);
-      font-size: calc(16 / var(--rem-base) * 1rem);
+      /* Fluid font size: responsive without media queries */
+      font-size: clamp(calc(15 / var(--rem-base) * 1rem), 2vw, calc(16 / var(--rem-base) * 1rem));
       font-weight: var(--body-font-weight-bold);
       line-height: 1.3;
       margin: 0 -0.5px;
@@ -44,7 +45,8 @@
     }
 
     ul {
-      font-size: calc(15 / var(--rem-base) * 1rem);
+      /* Fluid font size: responsive without media queries */
+      font-size: clamp(calc(13.5 / var(--rem-base) * 1rem), 1.8vw, calc(15 / var(--rem-base) * 1rem));
       line-height: var(--toc-line-height);
       list-style: none;
       margin: 0;
@@ -88,16 +90,6 @@
     .is-hidden-toc {
       display: none !important;
     }
-
-    @media (width >= 1024px) {
-      h3 {
-        font-size: calc(15 / var(--rem-base) * 1rem);
-      }
-
-      ul {
-        font-size: calc(13.5 / var(--rem-base) * 1rem);
-      }
-    }
   }
 
   .mobile-toc {
@@ -114,11 +106,11 @@
       position: static;
     }
 
-    @media (width < 1360px) {
+    @media (width < 1520px) {
       display: block;
     }
 
-    @media (width >= 1360px) {
+    @media (width >= 1520px) {
       display: none;
     }
   }
@@ -136,11 +128,11 @@
       position: static;
     }
 
-    @media (width < 1360px) {
+    @media (width < 1520px) {
       display: none;
     }
 
-    @media (width >= 1360px) {
+    @media (width >= 1520px) {
       display: block;
     }
   }

@@ -116,15 +116,19 @@
     
     /* Document Content Tokens */
     --doc-font-color: var(--color-jet-50);
-    --doc-font-size: inherit;
-    --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
+    /* Fluid font size: starts at body font size, grows slightly on larger screens */
+    --doc-font-size: clamp(1rem, 1.5vw + 0.5rem, calc(17 / var(--rem-base) * 1rem));
     --doc-line-height: 1.6;
+    /* Margin handled per breakpoint in doc.css */
     --doc-margin: 0 auto;
     --doc-margin--desktop: 0 2rem;
     --heading-font-color: var(--color-jet-80);
     --heading-font-weight: 450;
     --alt-heading-font-weight: var(--body-font-weight-bold);
     --section-divider-color: var(--panel-border-color);
+    
+    /* Fluid max width: grows from 720px to 1080px as viewport increases */
+    --doc-max-inline-size: clamp(calc(720 / var(--rem-base) * 1rem), 85vw, calc(1080 / var(--rem-base) * 1rem));
     
     /* Link Colors (using OKLCH) */
     --link-font-color: oklch(49% 0.13 250);
@@ -184,8 +188,6 @@
     --toc-block-size: calc(100vh - var(--toc-block-start) - 2.5rem);
     --toc-inline-size: calc(162 / var(--rem-base) * 1rem);
     --toc-inline-size--widescreen: calc(216 / var(--rem-base) * 1rem);
-    --doc-max-inline-size: calc(720 / var(--rem-base) * 1rem);
-    --doc-max-inline-size--desktop: calc(1080 / var(--rem-base) * 1rem);
     
     /* Stacking Context */
     --z-index-nav: 1;
@@ -206,6 +208,5 @@
     --toc-width: var(--toc-inline-size);
     --toc-width--widescreen: var(--toc-inline-size--widescreen);
     --doc-max-width: var(--doc-max-inline-size);
-    --doc-max-width--desktop: var(--doc-max-inline-size--desktop);
   }
 }

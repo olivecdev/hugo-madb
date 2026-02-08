@@ -1,10 +1,10 @@
 @layer components {
-  @media (width < 1360px) {
+  @media (width < 1520px) {
     aside.toc.sidebar {
       display: none;
     }
 
-    main > .content {
+    main>.content {
       overflow-x: auto;
       margin-inline: auto;
       padding-inline: 1rem;
@@ -12,13 +12,13 @@
     }
   }
 
-  @media (width >= 1360px) {
+  @media (width >=1520px) {
     main {
       flex: auto;
       min-inline-size: 0;
     }
 
-    main > .content {
+    main>.content {
       max-inline-size: 1024px;
       display: flex;
       margin-inline: auto;
@@ -36,7 +36,7 @@
     }
   }
 
-  @media (width >= 1216px) {
+  @media (width >=1216px) {
     aside.toc.sidebar {
       flex-basis: var(--toc-inline-size--widescreen);
     }
@@ -46,28 +46,28 @@
     display: block;
     position: relative;
     inline-size: 100%;
-    
+
     /* Responsive aspect ratios for signature iframe based on viewport dimensions */
     /* Portrait mobile (< 370/834) → 1:2 ratio */
     @media (max-aspect-ratio: 370/834) {
       aspect-ratio: 1/2;
     }
-    
+
     /* Narrow viewport (370-600/834) → 1:1 ratio */
     @media (min-aspect-ratio: 370.001/834) and (max-aspect-ratio: 600/834) {
       aspect-ratio: 1/1;
     }
-    
+
     /* Medium viewport (600-1020/834) → 3:1 ratio */
     @media (min-aspect-ratio: 600.001/834) and (max-aspect-ratio: 1020/834) {
       aspect-ratio: 3/1;
     }
-    
+
     /* Wide viewport (> 1020/834) → 4:1 ratio */
     @media (min-aspect-ratio: 1020.001/834) {
       aspect-ratio: 4/1;
     }
-    
+
     & iframe {
       position: absolute;
       inline-size: 100%;

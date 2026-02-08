@@ -4,7 +4,8 @@
     inset-block-start: var(--navbar-height);
     inset-inline-start: 0;
     inline-size: 100%;
-    font-size: calc(17 / var(--rem-base) * 1rem);
+    /* Fluid font size: shrinks slightly on larger screens */
+    font-size: clamp(calc(15.5 / var(--rem-base) * 1rem), 2vw, calc(17 / var(--rem-base) * 1rem));
     z-index: var(--z-index-nav);
     visibility: hidden;
 
@@ -13,7 +14,6 @@
     }
 
     @media (width >= 1024px) {
-      font-size: calc(15.5 / var(--rem-base) * 1rem);
       flex: none;
       position: static;
       inset-block-start: 0;
