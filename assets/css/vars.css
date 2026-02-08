@@ -1,3 +1,6 @@
+/* Cascade Layers Definition */
+@layer reset, base, components, utilities;
+
 @font-face {
   font-family: 'Ubuntu';
   src: url('../fonts/UbuntuSans[wdth,wght].woff2') format('woff2');
@@ -31,149 +34,179 @@
   src: url('../fonts/VictorMono-VariableFont_wght.ttf') format('truetype');
 }
 
-:root {
-  /* colors */
-  --color-white: #fff;
-  --color-smoke-10: #fefefe;
-  --color-smoke-30: #fafafa;
-  --color-smoke-50: #f5f5f5;
-  --color-smoke-70: #f0f0f0;
-  --color-smoke-90: #e1e1e1;
-  --color-gray-10: #c1c1c1;
-  --color-gray-30: #8e8e8e;
-  --color-gray-50: #808080;
-  --color-gray-70: #5d5d5d;
-  --color-jet-20: #4a4a4a;
-  --color-jet-30: #424242;
-  --color-jet-50: #333;
-  --color-jet-70: #222;
-  --color-jet-80: #191919;
-  --color-black: #000;
-  /* fonts */
-  --rem-base: 18;
-  /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-size: 1.0625em;
-  /* 17px */
-  --body-font-size--desktop: 1.125em;
-  /* 18px */
-  --body-font-size--print: 0.9375em;
-  /* 15px */
-  --body-line-height: 1.15;
-  --body-font-color: var(--color-jet-70);
-  --body-font-family: 'Open Sans', "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --body-font-weight-bold: 500;
-  --monospace-font-family: VictorMono, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-  --monospace-font-weight-bold: 500;
-  /* base */
-  --body-background: var(--color-white);
-  --panel-background: var(--color-smoke-30);
-  --panel-border-color: var(--color-smoke-90);
-  --scrollbar-thumb-color: var(--color-gray-10);
-  /* navbar */
-  --navbar-background: var(--color-jet-80);
-  --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
-  --navbar-button-background: var(--color-white);
-  --navbar-button-border-color: var(--panel-border-color);
-  --navbar-button-font-color: var(--body-font-color);
-  --navbar-menu-border-color: var(--panel-border-color);
-  --navbar-menu-background: var(--color-white);
-  --navbar-menu-font-color: var(--body-font-color);
-  --navbar-menu_hover-background: var(--color-smoke-50);
-  /* nav */
-  --nav-background: var(--panel-background);
-  --nav-border-color: var(--color-gray-10);
-  --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-jet-30);
-  --nav-muted-color: var(--color-gray-70);
-  --nav-panel-divider-color: var(--color-smoke-90);
-  --nav-secondary-background: var(--color-smoke-70);
-  /* toolbar */
-  --toolbar-background: var(--panel-background);
-  --toolbar-border-color: var(--panel-border-color);
-  --toolbar-font-color: var(--color-gray-70);
-  --toolbar-muted-color: var(--color-gray-30);
-  --page-version-menu-background: var(--color-smoke-70);
-  --page-version-missing-font-color: var(--color-gray-30);
-  /* admonitions */
-  --caution-color: #a0439c;
-  --caution-on-color: var(--color-white);
-  --important-color: #d32f2f;
-  --important-on-color: var(--color-white);
-  --note-color: #217ee7;
-  --note-on-color: var(--color-white);
-  --tip-color: #41af46;
-  --tip-on-color: var(--color-white);
-  --warning-color: #e18114;
-  --warning-on-color: var(--color-white);
-  /* doc */
-  --doc-font-color: var(--color-jet-50);
-  --doc-font-size: inherit;
-  --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
-  --doc-line-height: 1.6;
-  --doc-margin: 0 auto;
-  --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
-  --heading-font-weight: 450;
-  --alt-heading-font-weight: var(--body-font-weight-bold);
-  --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
-  --link_unresolved-font-color: var(--important-color);
-  --abstract-background: var(--color-smoke-70);
-  --abstract-font-color: var(--color-jet-20);
-  --abstract-border-color: var(--panel-border-color);
-  --admonition-background: var(--panel-background);
-  --admonition-label-font-weight: var(--body-font-weight-bold);
-  --caption-font-color: var(--color-gray-70);
-  --caption-font-weight: var(--body-font-weight-bold);
-  --code-background: var(--color-smoke-90);
-  --code-font-color: var(--body-font-color);
-  --example-background: var(--color-white);
-  --example-border-color: var(--color-gray-70);
-  --kbd-background: var(--panel-background);
-  --kbd-border-color: var(--color-gray-10);
-  --pre-background: var(--panel-background);
-  --pre-border-color: var(--panel-border-color);
-  --pre-annotation-font-color: var(--color-gray-50);
-  --quote-background: var(--panel-background);
-  --quote-border-color: var(--color-gray-70);
-  --quote-font-color: var(--color-gray-70);
-  --quote-attribution-font-color: var(--color-gray-30);
-  --sidebar-background: var(--color-smoke-90);
-  --table-border-color: var(--panel-border-color);
-  --table-stripe-background: var(--panel-background);
-  --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
-  /* toc */
-  --toc-font-color: var(--nav-muted-color);
-  --toc-heading-font-color: var(--doc-font-color);
-  --toc-border-color: var(--panel-border-color);
-  --toc-line-height: 1.2;
-  /* footer */
-  --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
-  /* dimensions and positioning */
-  --navbar-height: calc(63 / var(--rem-base) * 1rem);
-  --toolbar-height: calc(45 / var(--rem-base) * 1rem);
-  --drawer-height: var(--toolbar-height);
-  --body-top: var(--navbar-height);
-  --body-min-height: calc(100vh - var(--body-top));
-  --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
-  --nav-height--desktop: var(--body-min-height);
-  --nav-panel-menu-height: calc(100% - var(--drawer-height));
-  --nav-panel-explore-height: calc(50% + var(--drawer-height));
-  --nav-width: calc(270 / var(--rem-base) * 1rem);
-  --toc-top: calc(var(--body-top) + var(--toolbar-height));
-  --toc-height: calc(100vh - var(--toc-top) - 2.5rem);
-  --toc-width: calc(162 / var(--rem-base) * 1rem);
-  --toc-width--widescreen: calc(216 / var(--rem-base) * 1rem);
-  --doc-max-width: calc(720 / var(--rem-base) * 1rem);
-  --doc-max-width--desktop: calc(1080 / var(--rem-base) * 1rem);
-  /* stacking */
-  --z-index-nav: 1;
-  --z-index-toolbar: 2;
-  --z-index-page-version-menu: 3;
-  --z-index-navbar: 4;
+@layer base {
+  :root {
+    /* Primitive colors using OKLCH color space */
+    --color-white: oklch(100% 0 0);
+    --color-smoke-10: oklch(99% 0 0);
+    --color-smoke-30: oklch(98% 0 0);
+    --color-smoke-50: oklch(96% 0 0);
+    --color-smoke-70: oklch(94% 0 0);
+    --color-smoke-90: oklch(89% 0 0);
+    --color-gray-10: oklch(79% 0 0);
+    --color-gray-30: oklch(62% 0 0);
+    --color-gray-50: oklch(57% 0 0);
+    --color-gray-70: oklch(44% 0 0);
+    --color-jet-20: oklch(36% 0 0);
+    --color-jet-30: oklch(32% 0 0);
+    --color-jet-50: oklch(25% 0 0);
+    --color-jet-70: oklch(18% 0 0);
+    --color-jet-80: oklch(14% 0 0);
+    --color-black: oklch(0% 0 0);
+    
+    /* Typography System */
+    --rem-base: 18;
+    
+    /* Fluid typography using clamp() */
+    --body-font-size: clamp(1.0625rem, 1rem + 0.3125vw, 1.125rem);
+    --body-font-size--print: 0.9375em;
+    --body-line-height: 1.15;
+    --body-font-color: var(--color-jet-70);
+    --body-font-family: 'Open Sans', "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --body-font-weight-bold: 500;
+    --monospace-font-family: VictorMono, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    --monospace-font-weight-bold: 500;
+    
+    /* Semantic Color Tokens - Base Theme */
+    --body-background: var(--color-white);
+    --panel-background: var(--color-smoke-30);
+    --panel-border-color: var(--color-smoke-90);
+    --scrollbar-thumb-color: var(--color-gray-10);
+    
+    /* Navbar Tokens */
+    --navbar-background: var(--color-jet-80);
+    --navbar-font-color: var(--color-white);
+    --navbar_hover-background: var(--color-black);
+    --navbar-button-background: var(--color-white);
+    --navbar-button-border-color: var(--panel-border-color);
+    --navbar-button-font-color: var(--body-font-color);
+    --navbar-menu-border-color: var(--panel-border-color);
+    --navbar-menu-background: var(--color-white);
+    --navbar-menu-font-color: var(--body-font-color);
+    --navbar-menu_hover-background: var(--color-smoke-50);
+    
+    /* Navigation Tokens */
+    --nav-background: var(--panel-background);
+    --nav-border-color: var(--color-gray-10);
+    --nav-line-height: 1.35;
+    --nav-heading-font-color: var(--color-jet-30);
+    --nav-muted-color: var(--color-gray-70);
+    --nav-panel-divider-color: var(--color-smoke-90);
+    --nav-secondary-background: var(--color-smoke-70);
+    
+    /* Toolbar Tokens */
+    --toolbar-background: var(--panel-background);
+    --toolbar-border-color: var(--panel-border-color);
+    --toolbar-font-color: var(--color-gray-70);
+    --toolbar-muted-color: var(--color-gray-30);
+    --page-version-menu-background: var(--color-smoke-70);
+    --page-version-missing-font-color: var(--color-gray-30);
+    
+    /* Admonition Colors (using OKLCH) */
+    --caution-color: oklch(52% 0.19 320);
+    --caution-on-color: var(--color-white);
+    --important-color: oklch(54% 0.22 25);
+    --important-on-color: var(--color-white);
+    --note-color: oklch(58% 0.20 250);
+    --note-on-color: var(--color-white);
+    --tip-color: oklch(63% 0.19 145);
+    --tip-on-color: var(--color-white);
+    --warning-color: oklch(67% 0.17 55);
+    --warning-on-color: var(--color-white);
+    
+    /* Document Content Tokens */
+    --doc-font-color: var(--color-jet-50);
+    /* Fluid font size: starts at body font size, grows slightly on larger screens */
+    --doc-font-size: clamp(1rem, 1.5vw + 0.5rem, calc(17 / var(--rem-base) * 1rem));
+    --doc-line-height: 1.6;
+    /* Margin handled per breakpoint in doc.css */
+    --doc-margin: 0 auto;
+    --doc-margin--desktop: 0 2rem;
+    --heading-font-color: var(--color-jet-80);
+    --heading-font-weight: 450;
+    --alt-heading-font-weight: var(--body-font-weight-bold);
+    --section-divider-color: var(--panel-border-color);
+    
+    /* Fluid max width: grows from 720px to 1080px as viewport increases */
+    --doc-max-inline-size: clamp(calc(720 / var(--rem-base) * 1rem), 85vw, calc(1080 / var(--rem-base) * 1rem));
+    
+    /* Link Colors (using OKLCH) */
+    --link-font-color: oklch(49% 0.13 250);
+    --link_hover-font-color: oklch(42% 0.13 250);
+    --link_unresolved-font-color: var(--important-color);
+    
+    /* Content Block Tokens */
+    --abstract-background: var(--color-smoke-70);
+    --abstract-font-color: var(--color-jet-20);
+    --abstract-border-color: var(--panel-border-color);
+    --admonition-background: var(--panel-background);
+    --admonition-label-font-weight: var(--body-font-weight-bold);
+    --caption-font-color: var(--color-gray-70);
+    --caption-font-weight: var(--body-font-weight-bold);
+    --code-background: var(--color-smoke-90);
+    --code-font-color: var(--body-font-color);
+    --example-background: var(--color-white);
+    --example-border-color: var(--color-gray-70);
+    --kbd-background: var(--panel-background);
+    --kbd-border-color: var(--color-gray-10);
+    --pre-background: var(--panel-background);
+    --pre-border-color: var(--panel-border-color);
+    --pre-annotation-font-color: var(--color-gray-50);
+    --quote-background: var(--panel-background);
+    --quote-border-color: var(--color-gray-70);
+    --quote-font-color: var(--color-gray-70);
+    --quote-attribution-font-color: var(--color-gray-30);
+    --sidebar-background: var(--color-smoke-90);
+    --table-border-color: var(--panel-border-color);
+    --table-stripe-background: var(--panel-background);
+    --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
+    
+    /* TOC Tokens */
+    --toc-font-color: var(--nav-muted-color);
+    --toc-heading-font-color: var(--doc-font-color);
+    --toc-border-color: var(--panel-border-color);
+    --toc-line-height: 1.2;
+    
+    /* Footer Tokens */
+    --footer-line-height: var(--doc-line-height);
+    --footer-background: var(--color-smoke-90);
+    --footer-font-color: var(--color-gray-70);
+    --footer-link-font-color: var(--color-jet-80);
+    
+    /* Dimensions & Positioning - Using Fluid Values */
+    --navbar-height: clamp(3rem, calc(63 / var(--rem-base) * 1rem), 3.5rem);
+    --toolbar-height: calc(45 / var(--rem-base) * 1rem);
+    --drawer-height: var(--toolbar-height);
+    --body-block-start: var(--navbar-height);
+    --body-min-block-size: calc(100vh - var(--body-block-start));
+    --nav-block-size: calc(var(--body-min-block-size) - var(--toolbar-height));
+    --nav-block-size--desktop: var(--body-min-block-size);
+    --nav-panel-menu-block-size: calc(100% - var(--drawer-height));
+    --nav-panel-explore-block-size: calc(50% + var(--drawer-height));
+    --nav-inline-size: calc(270 / var(--rem-base) * 1rem);
+    --toc-block-start: calc(var(--body-block-start) + var(--toolbar-height));
+    --toc-block-size: calc(100vh - var(--toc-block-start) - 2.5rem);
+    --toc-inline-size: calc(162 / var(--rem-base) * 1rem);
+    --toc-inline-size--widescreen: calc(216 / var(--rem-base) * 1rem);
+    
+    /* Stacking Context */
+    --z-index-nav: 1;
+    --z-index-toolbar: 2;
+    --z-index-page-version-menu: 3;
+    --z-index-navbar: 4;
+    
+    /* Legacy dimension aliases for backwards compatibility */
+    --body-top: var(--body-block-start);
+    --body-min-height: var(--body-min-block-size);
+    --nav-height: var(--nav-block-size);
+    --nav-height--desktop: var(--nav-block-size--desktop);
+    --nav-panel-menu-height: var(--nav-panel-menu-block-size);
+    --nav-panel-explore-height: var(--nav-panel-explore-block-size);
+    --nav-width: var(--nav-inline-size);
+    --toc-top: var(--toc-block-start);
+    --toc-height: var(--toc-block-size);
+    --toc-width: var(--toc-inline-size);
+    --toc-width--widescreen: var(--toc-inline-size--widescreen);
+    --doc-max-width: var(--doc-max-inline-size);
+  }
 }

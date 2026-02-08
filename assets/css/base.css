@@ -1,93 +1,96 @@
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+@layer reset {
 
-html {
-  box-sizing: border-box;
-  font-size: var(--body-font-size);
-  height: 100%;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-@media screen and (min-width: 1024px) {
   html {
-    font-size: var(--body-font-size--desktop);
+    box-sizing: border-box;
+    font-size: var(--body-font-size);
+    block-size: 100%;
   }
-}
 
-body {
-  background: var(--body-background);
-  color: var(--body-font-color);
-  font-family: var(--body-font-family);
-  line-height: var(--body-line-height);
-  margin: 0;
-  word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  background-color: none;
-}
-
-code,
-kbd,
-pre {
-  font-family: var(--monospace-font-family);
-}
-
-b,
-dt,
-strong,
-th {
-  font-weight: var(--body-font-weight-bold);
-}
-
-em em { /* stylelint-disable-line */
-  font-style: normal;
-}
-
-strong strong { /* stylelint-disable-line */
-  font-weight: normal;
-}
-
-button {
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1em;
-  line-height: var(--body-line-height);
-  margin: 0;
-}
-
-button::-moz-focus-inner {
-  border: none;
-  padding: 0;
-}
-
-table {
-  border-collapse: collapse;
-  word-wrap: normal; /* table widths aren't computed as expected when word-wrap is enabled */
-}
-
-@supports (scrollbar-width: thin) {
-  body * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb-color) transparent;
+  body {
+    background: var(--body-background);
+    color: var(--body-font-color);
+    font-family: var(--body-font-family);
+    line-height: var(--body-line-height);
+    margin: 0;
+    overflow-wrap: anywhere;
+    /* use when hyphens are disabled or aren't sufficient */
   }
-}
 
-body ::-webkit-scrollbar {
-  height: 0.25rem;
-  width: 0.25rem;
-}
+  a {
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s, transform 0.15s;
+    will-change: transform;
 
-body ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      background-color: none;
+    }
+  }
+
+  code,
+  kbd,
+  pre {
+    font-family: var(--monospace-font-family);
+  }
+
+  b,
+  dt,
+  strong,
+  th {
+    font-weight: var(--body-font-weight-bold);
+  }
+
+  em em {
+    font-style: normal;
+  }
+
+  strong strong {
+    font-weight: normal;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: var(--body-line-height);
+    margin: 0;
+
+    &::-moz-focus-inner {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    overflow-wrap: normal;
+    /* table widths aren't computed as expected when word-wrap is enabled */
+  }
+
+  @supports (scrollbar-width: thin) {
+    body * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb-color) transparent;
+    }
+  }
+
+  body ::-webkit-scrollbar {
+    block-size: 0.25rem;
+    inline-size: 0.25rem;
+  }
+
+  body ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+  }
 }

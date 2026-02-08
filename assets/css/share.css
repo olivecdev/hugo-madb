@@ -1,171 +1,136 @@
-/* Share Post Block Styles */
-:root {
-    /* Platform brand colors for share buttons */
-    --facebook-color: #1877f2;
-    --twitter-color: #1da1f2;
-    --linkedin-color: #0a66c2;
-    --whatsapp-color: #25d366;
-    --telegram-color: #0088cc;
-    --reddit-color: #ff4500;
-    --hackernews-color: #ff6600;
-    --email-color: #738a94;
+@layer components {
+  :root {
+    --facebook-color: oklch(58.25% 0.182 253.5);
+    --twitter-color: oklch(61.05% 0.175 234.8);
+    --linkedin-color: oklch(43.45% 0.134 250.7);
+    --whatsapp-color: oklch(72.85% 0.174 146.5);
+    --telegram-color: oklch(58.5% 0.168 237.3);
+    --reddit-color: oklch(59.7% 0.238 24.8);
+    --hackernews-color: oklch(67.95% 0.204 55.4);
+    --email-color: oklch(60.15% 0.031 258.2);
+    --share-hover-text: oklch(100% 0 0);
+    --share-hover-shadow: oklch(0% 0 0 / 0.1);
+    --share-hover-shadow-dark: oklch(0% 0 0 / 0.3);
+  }
 
-    /* Common colors for share buttons */
-    --share-hover-text: #ffffff;
-    --share-hover-shadow: rgba(0, 0, 0, 0.1);
-    --share-hover-shadow-dark: rgba(0, 0, 0, 0.3);
-}
-
-.share-block {
+  .share-block {
     margin: 2rem 0;
     padding: 1.5rem 0;
-    border-top: 1px solid var(--panel-border-color);
-    border-bottom: 1px solid var(--panel-border-color);
-}
+    border-block-start: 1px solid var(--panel-border-color);
+    border-block-end: 1px solid var(--panel-border-color);
 
-.share-block a {
-    text-decoration: none;
-    color: inherit;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 
-.share-block-title {
+  .share-block-title {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin-block-end: 0.75rem;
     color: var(--toolbar-font-color);
     font-weight: 600;
-}
+  }
 
-.share-buttons {
+  .share-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    /* Fluid gap: smaller on narrow screens */
+    gap: clamp(0.4rem, 1.5vw, 0.6rem);
     align-items: center;
-}
+  }
 
-/* Base share button styling with neutral colors */
-.share-button {
+  .share-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5em;
+    /* Fluid sizing: responsive button size without media queries */
+    inline-size: clamp(2rem, 8vw, 3.5rem);
+    block-size: clamp(2rem, 8vw, 3.5rem);
     border-radius: 50%;
     background-color: transparent;
     color: var(--toolbar-muted-color);
     transition: all 0.2s ease;
     border: 1px solid var(--panel-border-color);
-}
 
-/* Subtle hover effect for all buttons */
-.share-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 5px var(--share-hover-shadow);
-    color: var(--toolbar-font-color);
-    border-color: var(--toolbar-font-color);
-}
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 3px 5px var(--share-hover-shadow);
+      color: var(--toolbar-font-color);
+      border-color: var(--toolbar-font-color);
+    }
 
-.share-button i {
-    font-size: 1.5rem;
-}
+    i {
+      /* Fluid icon size */
+      font-size: clamp(0.9rem, 3vw, 1.5rem);
+    }
 
-/* Platform-specific colors only appear on hover */
-.share-button.facebook:hover {
-    background-color: var(--facebook-color);
-    color: var(--share-hover-text);
-    border-color: var(--facebook-color);
-}
+    &.facebook:hover {
+      background-color: var(--facebook-color);
+      color: var(--share-hover-text);
+      border-color: var(--facebook-color);
+    }
 
-.share-button.twitter:hover {
-    background-color: var(--twitter-color);
-    color: var(--share-hover-text);
-    border-color: var(--twitter-color);
-}
+    &.twitter:hover {
+      background-color: var(--twitter-color);
+      color: var(--share-hover-text);
+      border-color: var(--twitter-color);
+    }
 
-.share-button.linkedin:hover {
-    background-color: var(--linkedin-color);
-    color: var(--share-hover-text);
-    border-color: var(--linkedin-color);
-}
+    &.linkedin:hover {
+      background-color: var(--linkedin-color);
+      color: var(--share-hover-text);
+      border-color: var(--linkedin-color);
+    }
 
-.share-button.whatsapp:hover {
-    background-color: var(--whatsapp-color);
-    color: var(--share-hover-text);
-    border-color: var(--whatsapp-color);
-}
+    &.whatsapp:hover {
+      background-color: var(--whatsapp-color);
+      color: var(--share-hover-text);
+      border-color: var(--whatsapp-color);
+    }
 
-.share-button.telegram:hover {
-    background-color: var(--telegram-color);
-    color: var(--share-hover-text);
-    border-color: var(--telegram-color);
-}
+    &.telegram:hover {
+      background-color: var(--telegram-color);
+      color: var(--share-hover-text);
+      border-color: var(--telegram-color);
+    }
 
-.share-button.reddit:hover {
-    background-color: var(--reddit-color);
-    color: var(--share-hover-text);
-    border-color: var(--reddit-color);
-}
+    &.reddit:hover {
+      background-color: var(--reddit-color);
+      color: var(--share-hover-text);
+      border-color: var(--reddit-color);
+    }
 
-.share-button.hackernews:hover {
-    background-color: var(--hackernews-color);
-    color: var(--share-hover-text);
-    border-color: var(--hackernews-color);
-}
+    &.hackernews:hover {
+      background-color: var(--hackernews-color);
+      color: var(--share-hover-text);
+      border-color: var(--hackernews-color);
+    }
 
-.share-button.email:hover {
-    background-color: var(--email-color);
-    color: var(--share-hover-text);
-    border-color: var(--email-color);
-}
+    &.email:hover {
+      background-color: var(--email-color);
+      color: var(--share-hover-text);
+      border-color: var(--email-color);
+    }
+  }
 
-/* Dark theme specific adjustments */
-html[data-theme="dark"] .share-button {
+  html[data-theme="dark"] .share-button {
     color: var(--toolbar-muted-color);
     border-color: var(--color-smoke-70);
-}
 
-html[data-theme="dark"] .share-button:hover {
-    box-shadow: 0 3px 8px var(--share-hover-shadow-dark);
-    color: var(--toolbar-font-color);
-    border-color: var(--toolbar-font-color);
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-    .share-buttons {
-        gap: 0.5rem;
+    &:hover {
+      box-shadow: 0 3px 8px var(--share-hover-shadow-dark);
+      color: var(--toolbar-font-color);
+      border-color: var(--toolbar-font-color);
     }
+  }
 
+  /* Keep forced-colors media query as it's for accessibility, not layout */
+  @media (forced-colors: active) {
     .share-button {
-        width: 2.2rem;
-        height: 2.2rem;
+      border: 2px solid CanvasText;
     }
-
-    .share-button i {
-        font-size: 1rem;
-    }
-}
-
-/* For very small screens, make icons a bit smaller */
-@media (max-width: 400px) {
-    .share-buttons {
-        gap: 0.4rem;
-    }
-
-    .share-button {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .share-button i {
-        font-size: 0.9rem;
-    }
-}
-
-/* High contrast mode for accessibility */
-@media (forced-colors: active) {
-    .share-button {
-        border: 2px solid CanvasText;
-    }
+  }
 }

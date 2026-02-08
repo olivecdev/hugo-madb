@@ -9,7 +9,7 @@
   {{ partial "post-preview.html" . }}
   {{ end }}
   <div class="pagination-centered">
-    {{ template "_internal/pagination.html" . }}
+    {{ partial "pagination.html" $paginator }}
   </div>
 </article>
 {{ end }}

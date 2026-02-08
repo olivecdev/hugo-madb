@@ -2,15 +2,14 @@
 <article class="doc">
   <h1 class="page">{{ .Title | safeHTML }}</h1>
   {{ partial "post-meta.html" . }}
-  {{ if .Params.toc }}
-  {{ partial "toc.html" . }}
-  {{ end }}
   {{ .Content }}
   {{ partial "post-signature" . }}
-  {{ partial "pagination" . }}
+  {{ partial "single-pagination.html" . }}
   {{ partial "social-share" . }}
   {{ with .Site.Params.giscuss }}
   {{ partial "giscuss" . }}
   {{ end }}
 </article>
+{{ partial "toc.html" . }}
 {{ end }}
+

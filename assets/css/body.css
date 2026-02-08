@@ -1,5 +1,10 @@
-@media screen and (min-width: 1024px) {
-  .body {
-    display: flex;
+@layer components {
+  /* Intrinsic layout: display flex when there's enough space for nav + main */
+  /* Using container query would be ideal, but body needs explicit width */
+  /* Using a reasonable breakpoint based on nav width + minimum content width */
+  @media (width >= 1024px) {
+    .body {
+      display: flex;
+    }
   }
 }
