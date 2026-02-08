@@ -18,7 +18,9 @@ This Hugo theme is designed for blogs targeting developers and STEAM audiences. 
 
 ## Key Features
 - **Asciidoc Support:** Content is written in Asciidoc, rendered by Hugo and asciidoctor with its extensions.
-- **Responsive Design:** Mobile-friendly layouts using modern CSS.
+- **Responsive Design:** Mobile-friendly layouts using modern, engine-first CSS. No raw media
+queries without good justification, intrisics and container layout, layers, native cascading etc,
+clamp, animations etc.
 - **Beautiful professionally looking pages:** Use web fonts and CSS for clean, readable typography, optimized for immersive reading. Must be pleasant to read on both desktop and mobile, responsive and modern.
 - **Syntax Highlighting:** Prefer the rouge gem, but additionally support highlight.js via simple CSS/JS includes.
 - **Navigation & Pagination:** Minimal, accessible navigation and pagination.
