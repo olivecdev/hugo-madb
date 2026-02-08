@@ -21,13 +21,13 @@ pagerSize = 3
   # adocHighlightTheme="atom-one-dark"
 [params.socialIcons.github]
     url = "https://github.com/acme"
-    icon = "bx bxl-github"
+    icon = "fa fa-github"
 [params.socialIcons.zap]
     url = "https://github.com/acme"
-    icon = "bx bxl-whatsapp"
+    icon = "fa fa-whatsapp"
 [params.socialIcons.email]
     url = "mailto:blue@sky.org"
-    icon = "bx bxl-gmail"
+    icon = "fa fa-envelope"
 [params.giscuss]
   repo = "olivecdev/hugo-madb"
   category="Comments"

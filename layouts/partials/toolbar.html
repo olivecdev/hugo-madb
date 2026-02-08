@@ -1,7 +1,7 @@
 <div class="toolbar" role="navigation">
   {{ partial "nav-toggle" . }}
   <a href="{{ .Site.Home.RelPermalink }}" class="home-link{{ if .IsHome }} is-current{{ end }}" title="Home">
-    <i class="bx bx-home"></i>
+    <i class="fa fa-home"></i>
   </a>
   {{ partial "breadcrumbs" . }}
   {{ $scratch := newScratch }}
