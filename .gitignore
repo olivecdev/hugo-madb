@@ -1,3 +1,4 @@
 resources/
 *.lock
+!Gemfile.lock
 node_modules/

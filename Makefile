@@ -2,4 +2,7 @@ start: css
 	hugo server --source=exampleSite --themesDir=../.. --disableFastRender --logLevel info
 
 css:
-	npm run css:build
+	bundle exec tailwindcss -i assets/css/tailwind.css -o assets/css/tailwind.generated.css
+
+css-watch:
+	bundle exec tailwindcss -i assets/css/tailwind.css -o assets/css/tailwind.generated.css --watch

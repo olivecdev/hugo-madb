@@ -119,10 +119,10 @@ This theme uses [Rouge](https://rouge.jneen.net/) by default, or [highlight.js](
 
 ## Development & Testing
 
-- Install Hugo, Asciidoctor, Node.js, and npm.
-- Run `npm install` once to install the Tailwind CSS v4 CLI.
-- Run `npm run css:build` to generate the utilities stylesheet, then `hugo server --source=exampleSite --themesDir=../..` (or `make start`) to preview the theme. `make start` builds Tailwind before starting Hugo. The generated stylesheet is committed, so sites consuming the theme do not need Node.js to build their Hugo site.
-- Run `npm run css:watch` alongside Hugo while editing theme templates.
+- Install Hugo, Ruby, and Bundler.
+- Run `bundle install` to install Asciidoctor and the Tailwind CSS v4 standalone CLI from the Gemfile.
+- Run `make css` to generate the utilities stylesheet, then `hugo server --source=exampleSite --themesDir=../..` (or `make start`) to preview the theme. `make start` builds Tailwind before starting Hugo. The generated stylesheet is committed, so sites consuming the theme do not need Ruby or Node.js to build their Hugo site.
+- Run `make css-watch` alongside Hugo while editing theme templates.
 - Keep i18n simple: use Hugo’s language files.
 - Submit pull requests with clear descriptions and reference relevant issues or previous PRs.
 
