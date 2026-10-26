@@ -1,5 +1,5 @@
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ul>
+<nav class="breadcrumbs hidden flex-1 ps-3 pe-2 leading-[var(--nav-line-height)] lg:block" aria-label="breadcrumbs">
+  <ul class="m-0 flex list-none flex-wrap p-0">
     {{ template "breadcrumb" (dict "p1" . "p2" . "siteTitle" .Site.Title) }}
   </ul>
 </nav>
@@ -9,5 +9,5 @@
 {{ else if not .p1.IsHome }}
 {{ template "breadcrumb" (dict "p1" .p1.Site.Home "p2" .p2 "siteTitle" .siteTitle) }}
 {{ end }}
-<li>{{ if ne .p1 .p2 }}<a href="{{ .p1.RelPermalink }}">{{ end }}{{ if not .p1.IsHome }}{{ .p1.Title | safeHTML }}{{ end }}{{ if ne .p1 .p2 }}</a>{{ end }}</li>
+<li class="m-0 inline">{{ if ne .p1 .p2 }}<a href="{{ .p1.RelPermalink }}">{{ end }}{{ if not .p1.IsHome }}{{ .p1.Title | safeHTML }}{{ end }}{{ if ne .p1 .p2 }}</a>{{ end }}</li>
 {{ end }}

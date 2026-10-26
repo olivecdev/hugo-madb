@@ -110,17 +110,6 @@
     filter: brightness(0.9) contrast(1.1);
   }
 
-  /* Component-specific fixes */
-  html[data-theme="dark"] .card {
-    background-color: var(--color-smoke-30);
-    border-color: var(--color-smoke-50);
-    box-shadow: 0 4px 8px oklch(0% 0 0 / 0.3);
-    
-    &:hover {
-      box-shadow: 0 6px 12px oklch(0% 0 0 / 0.4);
-    }
-  }
-
   html[data-theme="dark"] {
     .doc .admonitionblock td.content {
       background: var(--color-smoke-50);

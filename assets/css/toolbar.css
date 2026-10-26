@@ -1,17 +1,5 @@
 @layer components {
   .toolbar {
-    color: var(--toolbar-font-color);
-    align-items: center;
-    background-color: var(--toolbar-background);
-    box-shadow: 0 1px 0 var(--toolbar-border-color);
-    display: flex;
-    font-size: calc(15 / var(--rem-base) * 1rem);
-    block-size: var(--toolbar-height);
-    justify-content: flex-start;
-    position: sticky;
-    inset-block-start: var(--navbar-height);
-    z-index: var(--z-index-toolbar);
-
     a {
       color: inherit;
     }
@@ -24,13 +12,6 @@
     outline: none;
     line-height: inherit;
     padding: 0;
-    block-size: var(--toolbar-height);
-    inline-size: var(--toolbar-height);
-    margin-inline-end: -0.25rem;
-
-    @media (width >= 1024px) {
-      display: none;
-    }
 
     &.is-active {
       background-image: url(../img/back.svg);
@@ -39,16 +20,6 @@
   }
 
   .home-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    block-size: calc(var(--toolbar-height) / 2);
-    inline-size: calc(var(--toolbar-height) / 2);
-    margin: calc(var(--toolbar-height) / 4);
-    margin-inline-end: 0;
-    padding-inline-end: 0;
-    color: var(--toolbar-muted-color);
-
     i {
       font-size: 1.2rem;
     }
@@ -60,16 +31,9 @@
   }
 
   .edit-this-page {
-    display: none;
-    padding-inline-end: 0.5rem;
-
-    @media (width >= 1024px) {
-      display: block;
+    a {
+      color: var(--toolbar-muted-color);
     }
-  }
-
-  .toolbar .edit-this-page a {
-    color: var(--toolbar-muted-color);
   }
 
   .toolbar-actions {
@@ -80,13 +44,6 @@
   }
 
   .toolbar-item {
-    display: none;
-    padding-inline-end: 0.5rem;
-
-    @media (width >= 1024px) {
-      display: block;
-    }
-
     a {
       color: var(--toolbar-muted-color);
       cursor: pointer;

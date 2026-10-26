@@ -1,6 +1,6 @@
-<div class="nav-container fixed inset-x-0 top-[var(--navbar-height)] z-[var(--z-index-nav)] w-full md:w-[var(--nav-width)] lg:static" {{ if .Site.Params.hideSideNav }} hidden {{end}} >
+<div class="nav-container fixed inset-x-0 top-[var(--navbar-height)] z-[var(--z-index-nav)] w-full text-[clamp(calc(15.5/var(--rem-base)*1rem),2vw,calc(17/var(--rem-base)*1rem))] md:w-[var(--nav-width)] lg:static" {{ if .Site.Params.hideSideNav }} hidden {{end}} >
   <aside class="nav relative top-[var(--toolbar-height)] h-[calc(100vh-var(--navbar-height)-var(--toolbar-height))] bg-[var(--nav-background)] lg:sticky lg:top-[var(--navbar-height)] lg:h-[calc(100vh-var(--navbar-height))]">
-    <div class="panels">
+    <div class="panels flex h-full flex-col">
       {{ partial "nav-menu" . }}
       {{ partial "nav-explore" . }}
     </div>

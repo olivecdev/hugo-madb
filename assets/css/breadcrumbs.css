@@ -1,25 +1,6 @@
 @layer components {
   .breadcrumbs {
-    display: none;
-    flex: 1 1;
-    padding: 0 0.5rem 0 0.75rem;
-    line-height: var(--nav-line-height);
-
-    @media (width >= 1024px) {
-      display: block;
-    }
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
     li {
-      display: inline;
-      margin: 0;
 
       &::after {
         content: "/";

@@ -1,22 +1,9 @@
 @layer components {
   .nav-container {
-    position: fixed;
-    inset-block-start: var(--navbar-height);
-    inset-inline-start: 0;
-    inline-size: 100%;
-    /* Fluid font size: shrinks slightly on larger screens */
-    font-size: clamp(calc(15.5 / var(--rem-base) * 1rem), 2vw, calc(17 / var(--rem-base) * 1rem));
-    z-index: var(--z-index-nav);
     visibility: hidden;
-
-    @media (width >= 769px) {
-      inline-size: var(--nav-width);
-    }
 
     @media (width >= 1024px) {
       flex: none;
-      position: static;
-      inset-block-start: 0;
       visibility: visible;
     }
 
@@ -26,26 +13,12 @@
   }
 
   .nav {
-    background: var(--nav-background);
-    position: relative;
-    inset-block-start: var(--toolbar-height);
-    block-size: var(--nav-height);
-
     @media (width >= 769px) {
       box-shadow: 0.5px 0 3px var(--nav-border-color);
     }
 
     @media (width >= 1024px) {
-      inset-block-start: var(--navbar-height);
       box-shadow: none;
-      position: sticky;
-      block-size: var(--nav-height--desktop);
-    }
-
-    .panels {
-      display: flex;
-      flex-direction: column;
-      block-size: inherit;
     }
   }
 
@@ -76,11 +49,6 @@
   }
 
   .nav-menu {
-    min-block-size: 100%;
-    padding: 0.5rem 0.75rem;
-    line-height: var(--nav-line-height);
-    position: relative;
-
     h3.title {
       color: var(--nav-heading-font-color);
       font-size: inherit;
@@ -93,9 +61,6 @@
       color: inherit;
     }
 
-    > .nav-list + .nav-list {
-      margin-block-start: 0.5rem;
-    }
   }
 
   .nav-list {

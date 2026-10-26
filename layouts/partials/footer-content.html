@@ -1,16 +1,16 @@
-<footer class="footer bg-[var(--footer-background)] p-6 text-[var(--footer-font-color)]">
+<footer class="footer bg-[var(--footer-background)] p-6 text-[var(--footer-font-color)] text-[calc(15/var(--rem-base)*1rem)] leading-[var(--footer-line-height)]">
   {{ if or (.Site.Copyright) (.Site.Params.author.name) }}
   {{ $current := now.Format "2006" }}
-  <p>&copy; {{ if and (.Site.Params.since) (ne .Site.Params.since $current) }}{{ .Site.Params.since }}&ndash;{{ end }}{{
+  <p class="my-2">&copy; {{ if and (.Site.Params.since) (ne .Site.Params.since $current) }}{{ .Site.Params.since }}&ndash;{{ end }}{{
     $current }} {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Params.author.name | safeHTML }}.{{
     end }}</p>
   {{ end }}
   <div class="social-links">
     {{ range .Site.Params.socialIcons }}
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
+    <a class="text-[var(--footer-link-font-color)]" href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}">
       <i class="{{ .icon }}"></i>
     </a>
     {{ end }}
   </div>
-  <p>{{ .Site.Hugo.Version | i18n "poweredBy" | safeHTML }}</p>
+  <p class="my-2">{{ .Site.Hugo.Version | i18n "poweredBy" | safeHTML }}</p>
 </footer>

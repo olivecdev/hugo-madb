@@ -2,18 +2,16 @@
 {{ $tailwind := resources.Get "css/tailwind.generated.css" }}
 {{ $vars := resources.Get "css/vars.css" }}
 {{ $base := resources.Get "css/base.css" }}
-{{ $preview := resources.Get "css/preview.css" }}
 {{ $nav := resources.Get "css/nav.css" }}
 {{ $main := resources.Get "css/main.css" }}
 {{ $toolbar := resources.Get "css/toolbar.css" }}
 {{ $breadcrumbs := resources.Get "css/breadcrumbs.css" }}
 {{ $page_versions := resources.Get "css/page-versions.css" }}
 {{ $toc := resources.Get "css/toc.css" }}
-{{ $doc := resources.Get "css/doc.css" }}
+{{ $doc := resources.Get "css/asciidoc.css" }}
 {{ $pagination := resources.Get "css/pagination.css" }}
 {{ $pagination_list := resources.Get "css/pagination-list.css" }}
 {{ $header := resources.Get "css/header.css" }}
-{{ $footer := resources.Get "css/footer.css" }}
 {{ $share := resources.Get "css/share.css" }}
 {{ $fa := resources.Get "plugins/fontawesome/font-awesome.min.css"}}
 {{ $highlightPath := "css/custom_highlight.css" }}
@@ -24,8 +22,8 @@
 {{ fmt.Warnf "Loading styles for syntax highlighting from asset %s" $highlightPath }}
 {{ $highlight := resources.Get $highlightPath }}
 {{ $print := resources.Get "css/print.css" }}
-{{ $r := slice $vars $base $preview $nav $main $toolbar $breadcrumbs $page_versions
-$toc $doc $pagination $pagination_list $header $share $footer $fa $print }}
+{{ $r := slice $vars $base $nav $main $toolbar $breadcrumbs $page_versions
+$toc $doc $pagination $pagination_list $header $share $fa $print }}
 {{ with $tailwind }}{{ $r = $r | append . }}{{ end }}
 {{ range .Site.Params.custom_css }}
 {{ $custom := resources.Get . }}

@@ -102,7 +102,7 @@ This theme uses [Rouge](https://rouge.jneen.net/) by default, or [highlight.js](
 
 ## Theme Structure
 
-- `assets/` — CSS, fonts, and JavaScript (plain, modern, minimal)
+- `assets/` — Tailwind v4 utilities, generated CSS, semantic component CSS, fonts, and JavaScript. AsciiDoc-generated markup styles stay in `assets/css/asciidoc.css`; utilities target markup authored by theme templates. Stateful component CSS remains where it needs generated selectors, interaction states, or accessibility rules.
 - `layouts/` — Hugo templates for pages, partials, and base layouts
 - `static/` — Static files (images, fonts) served as-is
 - `archetypes/` — Default content templates (Asciidoc)

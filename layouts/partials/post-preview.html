@@ -1,12 +1,12 @@
-<article class="card">
+<article class="card m-[16px] flex flex-col break-words rounded-[4px] border border-[var(--body-background)] bg-[var(--body-background)] p-[16px] shadow-[0_4px_8px_oklch(0%_0_0_/_0.1)] transition-[transform,box-shadow] duration-200 hover:-translate-y-[8px] hover:shadow-[0_6px_12px_oklch(0%_0_0_/_0.18)] dark:bg-[var(--body-background)] dark:border-[var(--body-background)] dark:shadow-[0_4px_8px_oklch(95%_0_0_/_0.1)] dark:hover:shadow-[0_6px_12px_oklch(95%_0_0_/_0.18)] [&_h2]:break-words [&_.paragraph]:break-words [&_img]:pt-[0.2em] [&_img]:pe-[0.83em]">
   <h2>
     <a href="{{ $.RelPermalink }}">
       {{ .Title | safeHTML }}
     </a>
   </h2>
 
-  <div class="preview-container">
-    <div class="card-feature">
+  <div class="preview-container flex flex-wrap gap-4 pt-4">
+    <div class="card-feature min-w-[min(100%,200px)] flex-[1_1_200px]">
       {{ $images := .Resources.ByType "image" }}
       {{ $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
       {{ $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
@@ -29,7 +29,7 @@
       </div>
     </div>
 </div>
-<div class="paragraph align-right">
+<div class="paragraph align-right text-right">
   <p><a href="{{ .RelPermalink }}">{{ i18n "continueReading" .Title | safeHTML }}</a></p>
 </div>
 </article>

@@ -13,35 +13,7 @@
     --share-hover-shadow-dark: oklch(0% 0 0 / 0.3);
   }
 
-  .share-block {
-    margin: 2rem 0;
-    padding: 1.5rem 0;
-    border-block-start: 1px solid var(--panel-border-color);
-    border-block-end: 1px solid var(--panel-border-color);
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
-
-  .share-block-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-block-end: 0.75rem;
-    color: var(--toolbar-font-color);
-    font-weight: 600;
-  }
-
-  .share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    /* Fluid gap: smaller on narrow screens */
-    gap: clamp(0.4rem, 1.5vw, 0.6rem);
-    align-items: center;
-  }
-
+  /* Share buttons retain provider colors, states, and accessibility styling below. */
   .share-button {
     display: inline-flex;
     align-items: center;

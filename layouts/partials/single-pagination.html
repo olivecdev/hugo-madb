@@ -1,20 +1,20 @@
 {{ if or .PrevInSection .NextInSection }} 
-<nav class="pagination single-pagination" aria-label="Page navigation">
+<nav class="pagination single-pagination mt-8 flex items-stretch justify-between border-t border-[var(--toolbar-border-color)] pt-6 pb-2" aria-label="Page navigation">
   {{ with .PrevInSection }}
-  <a class="pagination__prev" href="{{ .RelPermalink }}" aria-label="Previous article">
-      <span class="pagination__label">&laquo; {{ .Title | truncate 35 }}</span>
+  <a class="pagination__prev flex min-w-0 max-w-1/2 flex-[1_1_0] items-center justify-start text-start" href="{{ .RelPermalink }}" aria-label="Previous article">
+      <span class="pagination__label max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-bold text-[clamp(0.95em,2vw,1em)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [line-clamp:1]">&laquo; {{ .Title | truncate 35 }}</span>
   {{ else }}
-  <a class="pagination__prev pagination__disabled" aria-hidden="true">
-      <span class="pagination__label">&laquo;</span>
+  <a class="pagination__prev pagination__disabled flex min-w-0 max-w-1/2 flex-[1_1_0] items-center justify-start text-start" aria-hidden="true">
+      <span class="pagination__label max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-bold text-[clamp(0.95em,2vw,1em)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [line-clamp:1]">&laquo;</span>
   {{ end }}
   </a>
 
   {{ with .NextInSection }}
-  <a class="pagination__next" href="{{ .RelPermalink }}" aria-label="Next article">
-      <span class="pagination__label">{{ .Title | truncate 35 }} &raquo;</span>
+  <a class="pagination__next flex min-w-0 max-w-1/2 flex-[1_1_0] items-center justify-end text-end" href="{{ .RelPermalink }}" aria-label="Next article">
+      <span class="pagination__label max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-bold text-[clamp(0.95em,2vw,1em)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [line-clamp:1]">{{ .Title | truncate 35 }} &raquo;</span>
   {{ else }}
-  <a class="pagination__next pagination__disabled" aria-hidden="true">
-      <span class="pagination__label">&raquo;</span>
+  <a class="pagination__next pagination__disabled flex min-w-0 max-w-1/2 flex-[1_1_0] items-center justify-end text-end" aria-hidden="true">
+      <span class="pagination__label max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-bold text-[clamp(0.95em,2vw,1em)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1] [line-clamp:1]">&raquo;</span>
   {{ end }}
   </a>
 </nav>

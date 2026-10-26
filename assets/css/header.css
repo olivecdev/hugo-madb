@@ -3,23 +3,11 @@
     overflow-y: hidden;
   }
 
-  body {
-    padding-block-start: var(--navbar-height);
-  }
-
   .navbar {
     background: var(--navbar-background);
     color: var(--navbar-font-color);
-    font-size: calc(16 / var(--rem-base) * 1rem);
-    block-size: var(--navbar-height);
-    position: fixed;
-    inset-block-start: 0;
-    inline-size: 100%;
     z-index: var(--z-index-navbar);
     
-    a {
-      text-decoration: none;
-    }
   }
 
   /* My addition for toggling dark/light mode */
@@ -27,12 +15,6 @@
     background: var(--navbar-background);
     color: var(--navbar-font-color);
     border: 0;
-  }
-
-  .navbar-brand .navbar-item:first-child,
-  .navbar-brand .navbar-item:first-child a {
-    color: var(--navbar-font-color);
-    font-size: calc(22 / var(--rem-base) * 1rem);
   }
 
   .navbar-brand .separator {
@@ -59,13 +41,6 @@
       background: var(--navbar_hover-background);
       color: var(--navbar-font-color);
     }
-  }
-
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    block-size: 100%;
-    gap: 1rem;
   }
 
   .navbar-burger {
@@ -281,36 +256,19 @@
     white-space: nowrap;
   }
 
-  .navbar-logo {
-    block-size: 1.75rem;
-    margin-inline-end: 0.5rem;
-  }
-
   .navbar-tools {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 
-  /* Top nav RSS icon styling */
-  .nav-rss-feed {
-    display: flex;
-    align-items: center;
-    
-    a {
-      color: var(--navbar-font-color);
-      transition: color 0.3s;
-      display: flex;
-      align-items: center;
-      
-      &:hover {
-        color: oklch(67% 0.23 40);
-      }
-    }
-    
-    .feather-rss {
-      inline-size: 18px;
-      block-size: 18px;
+  /* Top nav RSS hover color is a component interaction. */
+  .nav-rss-feed a {
+    color: var(--navbar-font-color);
+    transition: color 0.3s;
+
+    &:hover {
+      color: oklch(67% 0.23 40);
     }
   }
 }

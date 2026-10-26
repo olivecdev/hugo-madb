@@ -1,6 +1,6 @@
-<div class="toolbar sticky top-[var(--navbar-height)] z-[var(--z-index-toolbar)] flex h-[var(--toolbar-height)] items-center bg-[var(--toolbar-background)] text-[var(--toolbar-font-color)]" role="navigation">
+<div class="toolbar sticky top-[var(--navbar-height)] z-[var(--z-index-toolbar)] flex h-[var(--toolbar-height)] items-center bg-[var(--toolbar-background)] text-[var(--toolbar-font-color)] text-[calc(15/var(--rem-base)*1rem)] shadow-[0_1px_0_var(--toolbar-border-color)]" role="navigation">
   {{ partial "nav-toggle" . }}
-  <a href="{{ .Site.Home.RelPermalink }}" class="home-link{{ if .IsHome }} is-current{{ end }}" title="Home">
+  <a href="{{ .Site.Home.RelPermalink }}" class="home-link flex h-[calc(var(--toolbar-height)/2)] w-[calc(var(--toolbar-height)/2)] items-center justify-center m-[calc(var(--toolbar-height)/4)] me-0 pe-0 text-[var(--toolbar-muted-color)]{{ if .IsHome }} is-current{{ end }}" title="Home">
     <i class="fa fa-home"></i>
   </a>
   {{ partial "breadcrumbs" . }}
@@ -12,7 +12,7 @@
   {{ end }}
   {{ with .Site.Params.editThisPage }}
   {{ if $scratch.Get "filePath" }}
-  <div class="edit-this-page"><a href="{{ . }}{{ $scratch.Get " filePath" }}">{{ i18n "editThisPage" }}</a></div>
+  <div class="edit-this-page hidden pe-2 lg:block"><a href="{{ . }}{{ $scratch.Get " filePath" }}">{{ i18n "editThisPage" }}</a></div>
   {{ end }}
   {{ end }}
 </div>

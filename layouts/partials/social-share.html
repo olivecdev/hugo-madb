@@ -1,8 +1,8 @@
 {{ with .Site.Params.socialShare }}
-<div class="share-block">
-  <h4 class="share-block-title">{{ i18n "sharePost" }}</h4>
+<div class="share-block my-8 border-y border-[var(--panel-border-color)] py-6 [&_a]:text-inherit [&_a]:no-underline">
+  <h4 class="share-block-title mb-3 text-[0.9rem] font-semibold uppercase tracking-[0.05em] text-[var(--toolbar-font-color)]">{{ i18n "sharePost" }}</h4>
   <br />
-  <div class="share-buttons">
+  <div class="share-buttons flex flex-wrap items-center gap-[clamp(0.4rem,1.5vw,0.6rem)]">
     {{ if .facebook }}
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ $.Permalink }}" target="_blank" rel="noopener noreferrer"
       class="share-button facebook" aria-label="Share on Facebook">
