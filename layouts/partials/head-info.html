@@ -17,7 +17,7 @@
   <meta name="description" content="{{ .Site.Params.description }}">
 {{ end }}
 
-{{ with .Site.Author.name }}
+{{ with .Site.Params.author.name }}
   <meta name="author" content="{{ . }}">
 {{ end }}
 
@@ -76,7 +76,7 @@
   {{ end }}
 {{ end }}
 {{ if .IsPage }}
-  {{ with .Site.Author.facebook }}
+  {{ with .Site.Params.author.facebook }}
     <meta property="article:author" content="https://www.facebook.com/{{ . }}">
     <meta property="article:publisher" content="https://www.facebook.com/{{ . }}">
   {{ end }}
@@ -101,7 +101,7 @@
     <meta name="twitter:card" content="summary">
   {{ end }}
 {{ end }}
-{{ with .Site.Author.twitter }}
+{{ with .Site.Params.author.twitter }}
   <meta name="twitter:creator" content="@{{ . }}">
   <meta name="twitter:site" content="@{{ . }}">
 {{ end }}

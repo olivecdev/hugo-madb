@@ -41,14 +41,14 @@
     {{ if .reddit }}
     <a href="https://www.reddit.com/submit?url={{ $.Permalink }}&title={{ $.Title }}" target="_blank"
       rel="noopener noreferrer" class="share-button reddit" aria-label="Share on Reddit">
-      <span title="Reddit">Reddit</span>
+      <i class="fa fa-reddit-alien" aria-hidden="true"></i>
     </a>
     {{ end }}
 
     {{ if .hackernews }}
     <a href="https://news.ycombinator.com/submitlink?u={{ $.Permalink }}&t={{ $.Title }}" target="_blank"
       rel="noopener noreferrer" class="share-button hackernews" aria-label="Share on Hacker News">
-      <span title="Hacker News">HN</span>
+      <i class="fa fa-hacker-news" aria-hidden="true"></i>
     </a>
     {{ end }}
 

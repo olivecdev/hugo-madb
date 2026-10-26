@@ -1,8 +1,8 @@
 <footer class="footer bg-[var(--footer-background)] p-6 text-[var(--footer-font-color)]">
-  {{ if or (.Site.Copyright) (.Site.Author.name) }}
+  {{ if or (.Site.Copyright) (.Site.Params.author.name) }}
   {{ $current := now.Format "2006" }}
   <p>&copy; {{ if and (.Site.Params.since) (ne .Site.Params.since $current) }}{{ .Site.Params.since }}&ndash;{{ end }}{{
-    $current }} {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}.{{
+    $current }} {{ if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Params.author.name | safeHTML }}.{{
     end }}</p>
   {{ end }}
   <div class="social-links">
