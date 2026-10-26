@@ -8,11 +8,11 @@
   <body class="article">
     {{ partial "body-scripts.html" . }}
     {{ partial "header.html" . }}
-    <div class="body">
+    <div class="body lg:flex">
       {{ partial "nav.html" . }}
-      <main class="article">
+      <main class="article w-full">
         {{ partial "toolbar.html" . }}
-        <div class="content">
+        <div class="content mx-auto flex w-full max-w-[var(--doc-max-inline-size)] overflow-x-auto px-4">
           {{ block "main" . }}
           {{ end }}
         </div>

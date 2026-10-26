@@ -1,0 +1,14 @@
+{
+  "name": "hugo-madb",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Hugo theme with Tailwind CSS v4 utilities",
+  "scripts": {
+    "css:build": "tailwindcss -i assets/css/tailwind.css -o assets/css/tailwind.generated.css",
+    "css:watch": "tailwindcss -i assets/css/tailwind.css -o assets/css/tailwind.generated.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

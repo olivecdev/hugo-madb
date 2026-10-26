@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="doc">
+<article class="doc px-4 pb-16 text-[var(--doc-font-color)] text-[length:var(--doc-font-size)] leading-[var(--doc-line-height)]">
   <h1 class="page">{{ .Site.Title | safeHTML }}</h1>
   <div class="blog-description">
     {{ .Content }}

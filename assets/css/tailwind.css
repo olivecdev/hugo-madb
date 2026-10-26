@@ -1,0 +1,23 @@
+@import "tailwindcss/utilities" layer(utilities);
+@source "../../layouts/**/*.html";
+@source "../../exampleSite/layouts/**/*.html";
+@source "../../exampleSite/content/**/*.{md,adoc,html}";
+@theme {
+  --spacing: 0.25rem;
+  --font-sans: "Open Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: VictorMono, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-heading: Ubuntu, sans-serif;
+  --color-body: var(--body-font-color);
+  --color-surface: var(--body-background);
+  --color-panel: var(--panel-background);
+  --color-border: var(--panel-border-color);
+  --color-doc: var(--doc-font-color);
+  --color-heading: var(--heading-font-color);
+  --color-link: var(--link-font-color);
+  --color-nav: var(--nav-background);
+  --color-toolbar: var(--toolbar-background);
+  --color-footer: var(--footer-background);
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 1024px;
+}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

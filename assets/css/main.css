@@ -1,8 +1,4 @@
 @layer components {
-  main.article {
-    inline-size: 100%;
-  }
-
   @media (width < 1360px) {
     aside.toc.sidebar {
       display: none;
@@ -14,15 +10,6 @@
       display: none;
     }
   }
-}
-
-main>.content {
-  max-inline-size: var(--doc-max-inline-size);
-  display: flex;
-  margin-inline: auto;
-  padding-inline: 1rem;
-  inline-size: 100%;
-  overflow-x: auto;
 }
 
 @media (width >=1216px) {

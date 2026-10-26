@@ -7,9 +7,9 @@ This theme is designed for developers and STEAM audiences who value simplicity, 
 
 
 **Key Principles:**
-- Minimalism: No fancy frameworks, preprocessors, or bloat. Only barebones CSS, HTML, and limited JavaScript.
+- Minimalism: Keep dependencies focused and avoid JavaScript frameworks.
 - Modern Standards: Uses modern CSS, HTML, and JavaScript features. No support for outdated browsers (e.g., Internet Explorer).
-- No Preprocessing: Avoids TailWindCSS, SCSS, or JavaScript frameworks. No post/preprocessing for CSS or JS.
+- Tailwind CSS v4 utilities for template-owned layout, with semantic CSS retained for generated AsciiDoc markup and stateful components whose selectors cannot safely be replaced by static utility classes.
 - Simplicity: Only adds JavaScript when absolutely necessary, and keeps it minimal.
 
 [![MPL 2.0 License](https://img.shields.io/badge/License-MPL%202.0-blue.svg)](https://github.com/basil/antora-default-ui-hugo-theme/blob/master/LICENSE)
@@ -119,17 +119,18 @@ This theme uses [Rouge](https://rouge.jneen.net/) by default, or [highlight.js](
 
 ## Development & Testing
 
-- Install Hugo and Asciidoc (see above)
-- Run `hugo server` to preview changes locally
-- Keep i18n simple: use Hugo’s language files
-- Submit pull requests with clear descriptions and reference relevant issues or previous PRs
+- Install Hugo, Asciidoctor, Node.js, and npm.
+- Run `npm install` once to install the Tailwind CSS v4 CLI.
+- Run `npm run css:build` to generate the utilities stylesheet, then `hugo server --source=exampleSite --themesDir=../..` (or `make start`) to preview the theme. `make start` builds Tailwind before starting Hugo. The generated stylesheet is committed, so sites consuming the theme do not need Node.js to build their Hugo site.
+- Run `npm run css:watch` alongside Hugo while editing theme templates.
+- Keep i18n simple: use Hugo’s language files.
+- Submit pull requests with clear descriptions and reference relevant issues or previous PRs.
 
 ## Out of Scope
 
 - No support for old browsers (e.g., IE)
-- No advanced build tools or dependency managers (e.g., nix flake optional, not required)
+- No JavaScript frameworks
 - No custom i18n or accessibility frameworks beyond Hugo’s basics
-- No fancy CSS processors or JavaScript frameworks
 
 ---
 

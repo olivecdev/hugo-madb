@@ -1,5 +1,5 @@
 <div class="nav-panel-menu is-active" data-panel="menu">
-  <nav class="nav-menu">
+  <nav class="nav-menu relative min-h-full px-3 py-2 leading-[var(--nav-line-height)]">
     <h3 class="title"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title | safeHTML }}</a></h3>
     {{ partial "nav-tree" (dict "context" . "current" .Site.Home "sections" .Site.Sections "pages" .Site.RegularPages
     "level" 0) }}
