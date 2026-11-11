@@ -32,7 +32,7 @@
 
     /* Panel and component backgrounds */
     --panel-background: var(--color-smoke-30);
-    --panel-border-color: var(--color-smoke-90);
+    --panel-border-color: var(--color-gray-10);
 
     /* Navbar - preserved as-is */
     --navbar-background: oklch(0% 0 0);
@@ -58,7 +58,7 @@
     --toolbar-background: var(--panel-background);
     --toolbar-border-color: var(--panel-border-color);
     --toolbar-font-color: var(--color-gray-70);
-    --toolbar-muted-color: var(--color-gray-30);
+    --toolbar-muted-color: var(--color-gray-50);
     --page-version-menu-background: var(--color-smoke-50);
     --page-version-missing-font-color: var(--color-gray-30);
 
@@ -77,7 +77,7 @@
     --warning-color: oklch(75% 0.17 55);
 
     /* Tables */
-    --table-border-color: var(--color-smoke-90);
+    --table-border-color: var(--color-gray-10);
     --table-stripe-background: var(--color-smoke-30);
     --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
     --sidebar-background: var(--color-smoke-70);
@@ -94,6 +94,7 @@
 
     /* Cards and UI elements */
     --card-background: var(--color-smoke-30);
+    --card-border-color: var(--color-gray-10);
     --quotebox-background: var(--color-smoke-30);
     --kbd-background: var(--color-smoke-50);
     --kbd-border-color: var(--color-gray-30);
@@ -149,7 +150,7 @@
 
     /* Syntax highlighting adjustments */
     .highlight {
-      .c { color: oklch(60% 0.03 250); } /* Comment */
+      .c { color: oklch(70% 0.03 250); } /* Comment */
       .k { color: oklch(75% 0.12 55); } /* Keyword */
       .s { color: oklch(88% 0.15 130); } /* String */
       .n { color: oklch(90% 0.02 60); } /* Name */

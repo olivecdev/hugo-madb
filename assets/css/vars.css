@@ -136,6 +136,8 @@
     --link_unresolved-font-color: var(--important-color);
     
     /* Content Block Tokens */
+    --card-background: var(--color-white);
+    --card-border-color: var(--color-smoke-90);
     --abstract-background: var(--color-smoke-70);
     --abstract-font-color: var(--color-jet-20);
     --abstract-border-color: var(--panel-border-color);
