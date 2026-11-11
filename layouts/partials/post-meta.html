@@ -1,9 +1,9 @@
 <div class="openblock is-before-toc">
-  <div class="title post-meta">
+  <div class="title flex flex-wrap items-baseline gap-x-2 gap-y-1 [&>*:not(:first-child)::before]:me-2 [&>*:not(:first-child)::before]:opacity-60 [&>*:not(:first-child)::before]:content-['·']">
     {{ if .Date }}
       {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
       {{ $lastmodstr := default (i18n "dateFormat") .Site.Params.dateformat | .Lastmod.Format }}
-      <span class="post-meta__item post-meta__date whitespace-nowrap">
+      <span class="inline-flex items-baseline whitespace-nowrap">
         {{ $datestr | i18n "postedOnDate" }}
         {{- if ne $datestr $lastmodstr }}
           &nbsp;{{ $lastmodstr | i18n "lastModified" }}
@@ -12,7 +12,7 @@
     {{ end }}
     {{ $taxonomy := "categories" }}
     {{ with .Param $taxonomy }}
-      <span class="post-meta__item post-meta__categories whitespace-nowrap">
+      <span class="inline-flex items-baseline whitespace-nowrap">
         {{ i18n "in" }}&nbsp;
         {{- range $index, $page := . }}
             {{- if gt $index 0 }},&nbsp;{{ end -}}
@@ -25,7 +25,7 @@
     {{ $current := . }}
     {{ range $taxonomy := slice "tags" "topics" }}
       {{ with $current.Param $taxonomy }}
-        <span class="post-meta__item post-meta__tags whitespace-nowrap">
+        <span class="inline-flex items-baseline whitespace-nowrap">
             {{ i18n "about" }}&nbsp;
             {{- range $index, $page := . }}
                 {{- if gt $index 0 }},&nbsp;{{ end -}}
@@ -36,7 +36,7 @@
         </span>
       {{ end }}
     {{ end }}
-    <span class="post-meta__item post-meta__reading-time whitespace-nowrap">
+    <span class="inline-flex items-baseline whitespace-nowrap">
       {{ i18n "readingTime" .ReadingTime }}
     </span>
   </div>
