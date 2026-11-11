@@ -277,25 +277,38 @@
         position: absolute;
         inset-block-start: 0;
         inset-inline-start: 0;
-        font-size: calc(15 / var(--rem-base) * 1rem);
-        padding: 0 0.5rem;
-        block-size: 1.25rem;
+        font-size: calc(14.5 / var(--rem-base) * 1rem);
+        padding: 0.3rem 0.7rem;
         line-height: 1;
         font-weight: var(--admonition-label-font-weight);
         text-transform: uppercase;
         border-radius: 0.45rem;
         transform: translate(-0.5rem, -50%);
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 0.25rem;
+        justify-content: center;
+        gap: 0.35rem;
 
         i {
           display: inline-flex;
           align-items: center;
-          block-size: 100%;
+          justify-content: center;
+          line-height: 1;
+
+          &::before {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+          }
 
           &::after {
             content: attr(title);
+            display: inline-flex;
+            align-items: center;
+            font-family: var(--body-font-family);
+            font-weight: var(--admonition-label-font-weight);
+            line-height: 1;
+            letter-spacing: 0.04em;
           }
         }
       }
