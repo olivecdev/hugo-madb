@@ -5,6 +5,7 @@
     --linkedin-color: oklch(43.45% 0.134 250.7);
     --whatsapp-color: oklch(72.85% 0.174 146.5);
     --telegram-color: oklch(58.5% 0.168 237.3);
+    --bluesky-color: oklch(62.3% 0.214 250.9);
     --reddit-color: oklch(59.7% 0.238 24.8);
     --hackernews-color: oklch(67.95% 0.204 55.4);
     --email-color: oklch(60.15% 0.031 258.2);
@@ -39,6 +40,11 @@
       font-size: clamp(0.9rem, 3vw, 1.5rem);
     }
 
+    svg {
+      inline-size: clamp(0.9rem, 3vw, 1.5rem);
+      block-size: clamp(0.9rem, 3vw, 1.5rem);
+    }
+
     &.facebook:hover {
       background-color: var(--facebook-color);
       color: var(--share-hover-text);
@@ -67,6 +73,12 @@
       background-color: var(--telegram-color);
       color: var(--share-hover-text);
       border-color: var(--telegram-color);
+    }
+
+    &.bluesky:hover {
+      background-color: var(--bluesky-color);
+      color: var(--share-hover-text);
+      border-color: var(--bluesky-color);
     }
 
     &.reddit:hover {
