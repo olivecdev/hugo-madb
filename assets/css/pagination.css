@@ -16,7 +16,7 @@ nav.single-pagination {
 
   a.pagination__prev,
   a.pagination__next {
-    color: var(--link-color, #6cf);
+    color: var(--link-font-color);
     text-decoration: underline;
     background: none;
     border: none;
