@@ -1,35 +1,43 @@
 <div class="openblock is-before-toc">
-  <div class="title">
+  <div class="title post-meta">
     {{ if .Date }}
       {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
       {{ $lastmodstr := default (i18n "dateFormat") .Site.Params.dateformat | .Lastmod.Format }}
-      {{ $datestr | i18n "postedOnDate"}}
-      {{ if ne $datestr $lastmodstr }}
-        {{ $lastmodstr | i18n "lastModified" }}
-      {{ end }}
+      <span class="post-meta__item post-meta__date whitespace-nowrap">
+        {{ $datestr | i18n "postedOnDate" }}
+        {{- if ne $datestr $lastmodstr }}
+          &nbsp;{{ $lastmodstr | i18n "lastModified" }}
+        {{- end }}
+      </span>
     {{ end }}
     {{ $taxonomy := "categories" }}
     {{ with .Param $taxonomy }}
-        {{ i18n "in" }}
-        {{ range $index, $page := . }}
-            {{- if gt $index 0 }}, {{ end -}}
+      <span class="post-meta__item post-meta__categories whitespace-nowrap">
+        {{ i18n "in" }}&nbsp;
+        {{- range $index, $page := . }}
+            {{- if gt $index 0 }},&nbsp;{{ end -}}
             {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $page) -}}
                 <a href="{{ .RelPermalink }}">{{ $page }}</a>
             {{- end }}
         {{- end }}
+      </span>
     {{ end }}
     {{ $current := . }}
     {{ range $taxonomy := slice "tags" "topics" }}
-        {{ with $current.Param $taxonomy }}
-            &middot; {{ i18n "about" }}
-            {{ range $index, $page := . }}
-                {{- if gt $index 0 }}, {{ end -}}
+      {{ with $current.Param $taxonomy }}
+        <span class="post-meta__item post-meta__tags whitespace-nowrap">
+            {{ i18n "about" }}&nbsp;
+            {{- range $index, $page := . }}
+                {{- if gt $index 0 }},&nbsp;{{ end -}}
                 {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $page) -}}
                     <a href="{{ .RelPermalink }}">{{ $page }}</a>
                 {{- end }}
             {{- end }}
-        {{ end }}
+        </span>
+      {{ end }}
     {{ end }}
-    &middot; {{ i18n "readingTime" .ReadingTime }}
+    <span class="post-meta__item post-meta__reading-time whitespace-nowrap">
+      {{ i18n "readingTime" .ReadingTime }}
+    </span>
   </div>
 </div>
